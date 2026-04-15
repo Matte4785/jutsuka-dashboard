@@ -28,7 +28,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
 .jk-pill{padding:6px 12px;border-radius:999px;border:1px solid var(--ep-border-a);background:rgba(6,182,212,.08);font-size:11px;color:var(--ep-glow);white-space:nowrap}
 .jk-pill strong{color:var(--ep-text)}
 .jk-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ep-cyan);box-shadow:0 0 8px var(--ep-cyan);margin-right:6px}
-.jk-main{display:grid;grid-template-columns:1fr 1.15fr .9fr;gap:9px;flex:1;min-height:0}
+.jk-main{display:grid;grid-template-columns:1fr 1.15fr .75fr;gap:9px;flex:1;min-height:0}
 .jk-col{display:flex;flex-direction:column;gap:9px;min-height:0}
 .jk-card{border-radius:18px;border:1px solid var(--ep-border);background:var(--ep-card);padding:13px;display:flex;flex-direction:column;overflow:hidden}
 .jk-card.grow{flex:1;min-height:0}
@@ -69,8 +69,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
 .jk-alert span{display:block;font-size:10px;color:var(--ep-muted);line-height:1.4}
 /* DOCK */
 .jk-dock{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;flex-shrink:0}
-.jk-dock-btn{min-height:52px;border-radius:14px;border:1.5px solid rgba(6,182,212,.2);background:rgba(6,182,212,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;color:var(--ep-soft);cursor:pointer;position:relative;overflow:hidden}
-.jk-dock-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2;margin-bottom:1px}
+.jk-dock-btn{min-height:44px;border-radius:12px;border:1.5px solid rgba(6,182,212,.2);background:rgba(6,182,212,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:9px;color:var(--ep-soft);cursor:pointer;position:relative;overflow:hidden}
+.jk-dock-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;margin-bottom:0px}
 .jk-dock-btn.active{background:rgba(6,182,212,.1);border-color:var(--ep-cyan);color:var(--ep-glow);box-shadow:0 0 14px rgba(6,182,212,.2),inset 0 0 14px rgba(168,85,247,.06)}
 .jk-dock-btn.active svg{filter:drop-shadow(0 0 3px var(--ep-cyan))}
 .jk-dock-btn.active::after{content:'';position:absolute;bottom:0;left:18%;right:18%;height:2px;border-radius:999px;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple))}
@@ -187,7 +187,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
     <div class="jk-pill"><span class="jk-dot"></span><strong>Palestra aperta</strong></div>
     <div class="jk-pill" id="jk-day-pill"><strong>—</strong></div>
   </div>
-  <div class="jk-main">
+  <div class="jk-main" style="grid-template-columns:1.3fr .7fr">
     <div class="jk-col">
       <div class="jk-card grow">
         <div class="jk-clock" id="jk-clock">--:--</div>
@@ -196,7 +196,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
         <!-- SPOTIFY MINI PLAYER -->
         <div style="margin-top:14px;background:rgba(6,182,212,.04);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px">
           <div style="display:flex;align-items:center;gap:10px">
-            <!-- Artwork placeholder -->
             <div id="sp-art" style="width:44px;height:44px;border-radius:9px;background:linear-gradient(135deg,rgba(168,85,247,.4),rgba(6,182,212,.4));flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
             </div>
@@ -204,16 +203,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
               <div id="sp-title" style="font-size:12px;font-weight:600;color:var(--ep-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Apri Spotify</div>
               <div id="sp-artist" style="font-size:10px;color:var(--ep-muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">per ascoltare la musica</div>
             </div>
-            <!-- Spotify logo -->
             <div style="width:22px;height:22px;border-radius:50%;background:#1DB954;display:flex;align-items:center;justify-content:center;flex-shrink:0">
               <svg viewBox="0 0 24 24" fill="white" width="13" height="13"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.856zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.608z"/></svg>
             </div>
           </div>
-          <!-- Barra progresso fittizia -->
           <div style="height:2px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden">
             <div id="sp-progress" style="height:100%;width:35%;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple));border-radius:999px;transition:width .5s"></div>
           </div>
-          <!-- Controlli -->
           <div style="display:flex;align-items:center;justify-content:space-between;padding:0 2px">
             <button onclick="spCmd('prev')" title="Precedente" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--ep-muted);display:flex;align-items:center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
@@ -236,22 +232,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
       </div>
     </div>
     <div class="jk-col">
-      <div class="jk-card jk-card-live" style="flex:.9;min-height:0;position:relative">
-        <div class="jk-live-bar"></div>
-        <div class="jk-course-live">
-          <div class="sec-label">Corso in corso</div>
-          <div class="jk-live-badge" id="jk-live-badge">● —</div>
-          <div class="jk-live-title" id="jk-live-title">—</div>
-          <div class="jk-course-meta" id="jk-live-meta">—</div>
-          <div class="jk-pill-row" id="jk-live-pills"></div>
-        </div>
-      </div>
-      <div class="jk-card grow">
-        <div class="sec-label">Prossimi corsi</div>
-        <div id="jk-next-list"></div>
-      </div>
-    </div>
-    <div class="jk-col">
       <div class="jk-card">
         <div class="sec-label">Meteo</div>
         <div class="jk-weather-top">
@@ -264,9 +244,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
           <div class="jk-metric"><span>Percepita</span><strong id="jk-wf">--</strong></div>
         </div>
       </div>
-      <div class="jk-card grow">
-        <div class="sec-label">Avvisi rapidi</div>
-        <div id="jk-avvisi-home"></div>
+      <div class="jk-card jk-card-live grow" style="position:relative">
+        <div class="jk-live-bar"></div>
+        <div class="jk-course-live">
+          <div class="sec-label">Corso in corso</div>
+          <div class="jk-live-badge" id="jk-live-badge">● —</div>
+          <div class="jk-live-title" id="jk-live-title">—</div>
+          <div class="jk-course-meta" id="jk-live-meta">—</div>
+          <div class="jk-pill-row" id="jk-live-pills"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -340,32 +326,109 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Orari corsi</span>
   </div>
-  <div style="padding:14px;overflow-y:auto;flex:1" id="jk-orari-cal"></div>
+  <div style="padding:14px;overflow-y:auto;flex:1" id="jk-orari-cal">
+    <div id="jk-prossimi-cal"></div>
+  </div>
 </div>
 
 <!-- TABATA -->
 <div class="jk-screen jk-inner" style="width:14.285%;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
-    <span class="jk-inner-title">Timer allenamento</span>
+    <span class="jk-inner-title">Tabata Setup Pro</span>
   </div>
-  <div style="padding:12px 14px;display:flex;flex-direction:column;flex:1;overflow-y:auto">
-    <div id="jk-tab-cfg" style="display:flex;flex-direction:column;flex:1">
-      <div style="font-size:9px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Preset</div>
-      <div class="jk-preset-row" id="jk-preset-row"><span style="font-size:11px;color:var(--ep-muted)">Nessun preset</span></div>
-      <div class="jk-save-row"><input type="text" id="jk-pname" placeholder="Nome preset..."><button onclick="savePreset()">Salva</button></div>
-      <div style="font-size:9px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Esercizi</div>
-      <div class="jk-ex-list" id="jk-ex-list"><div style="font-size:11px;color:var(--ep-muted)">Nessun esercizio</div></div>
-      <div class="jk-add-ex"><input type="text" id="jk-newex" placeholder="Nome (opzionale)" onkeydown="if(event.key==='Enter')addEx()"><button onclick="addEx()">+ Aggiungi</button></div>
-      <div class="jk-cfg-grid">
-        <div class="jk-cfg-row"><label>Durata es.</label><input type="number" id="jk-tex" value="40" min="5" max="300"><span class="unit">s</span></div>
-        <div class="jk-cfg-row"><label>Rec. serie</label><input type="number" id="jk-trs" value="60" min="5" max="600"><span class="unit">s</span></div>
-        <div class="jk-cfg-row"><label>Rec. es.</label><label class="jk-tog"><input type="checkbox" id="jk-reon" checked onchange="document.getElementById('jk-tre').disabled=!this.checked"><span class="jk-tog-sl"></span></label><input type="number" id="jk-tre" value="15"><span class="unit">s</span></div>
-        <div class="jk-cfg-row"><label>Serie</label><input type="number" id="jk-nset" value="3" min="1" max="20"></div>
+  <div style="display:flex;flex-direction:column;flex:1;overflow:hidden">
+
+    <!-- CONFIG -->
+    <div id="jk-tab-cfg" style="display:flex;flex-direction:column;flex:1;overflow-y:auto;padding:10px 12px;gap:8px">
+
+      <!-- PRESET ROW -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="font-size:9px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">Preset</div>
+        <div class="jk-preset-row" id="jk-preset-row" style="flex:1;margin:0;padding:0"><span style="font-size:11px;color:var(--ep-muted)">Nessun preset</span></div>
+        <div style="display:flex;gap:5px;flex-shrink:0">
+          <input type="text" id="jk-pname" placeholder="Nome..." style="width:90px;background:rgba(6,182,212,.06);border:1px solid var(--ep-border);border-radius:7px;color:var(--ep-text);padding:5px 8px;font-size:11px;font-family:inherit">
+          <button onclick="savePreset()" style="background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);border-radius:7px;color:var(--ep-cyan);padding:5px 10px;font-size:11px;cursor:pointer;font-family:inherit;white-space:nowrap">Salva</button>
+        </div>
       </div>
-      <button class="jk-start-btn" onclick="startSession()">Avvia allenamento</button>
+
+      <!-- ESERCIZI -->
+      <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:12px;padding:8px 10px">
+        <div style="font-size:9px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Lista esercizi</div>
+        <div class="jk-ex-list" id="jk-ex-list" style="max-height:60px"><div style="font-size:11px;color:var(--ep-muted)">Nessun esercizio</div></div>
+        <div style="display:flex;gap:5px;margin-top:6px">
+          <input type="text" id="jk-newex" placeholder="Nome (opzionale)" onkeydown="if(event.key==='Enter')addEx()" style="flex:1;background:rgba(6,182,212,.05);border:1px solid var(--ep-border);border-radius:7px;color:var(--ep-text);padding:6px 8px;font-size:12px;font-family:inherit">
+          <button onclick="addEx()" style="background:var(--ep-cyan);border:none;border-radius:7px;color:#000;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit">+</button>
+        </div>
+      </div>
+
+      <!-- GRIGLIA 3 COLONNE -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;flex:1">
+
+        <!-- COL 1: ESERCIZI PER SERIE -->
+        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:8px">
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Configurazione ciclo</div>
+          <svg width="90" height="90" viewBox="0 0 90 90">
+            <circle cx="45" cy="45" r="38" fill="none" stroke="rgba(6,182,212,.12)" stroke-width="6"/>
+            <circle id="dial-nex" cx="45" cy="45" r="38" fill="none" stroke="url(#dialGrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="179" transform="rotate(-90 45 45)"/>
+            <defs><linearGradient id="dialGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+            <text x="45" y="49" text-anchor="middle" font-size="22" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-nex">8</text>
+          </svg>
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.06em">Esercizi per serie</div>
+          <div style="display:flex;gap:8px">
+            <button onclick="adjustVal('jk-nex',1,1,20,'dial-nex','disp-nex',239,20)" style="width:34px;height:34px;border-radius:8px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>
+            <button onclick="adjustVal('jk-nex',-1,1,20,'dial-nex','disp-nex',239,20)" style="width:34px;height:34px;border-radius:8px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>
+          </div>
+          <input type="hidden" id="jk-nex" value="8">
+        </div>
+
+        <!-- COL 2: TEMPI ESERCIZIO -->
+        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px">
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Tempi esercizio</div>
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(6,182,212,.12)" stroke-width="5"/>
+            <circle id="dial-tex" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="124" transform="rotate(-90 40 40)"/>
+            <text x="40" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#06b6d4" font-family="Inter,system-ui" id="disp-tex">40s</text>
+          </svg>
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Durata esercizio</div>
+          <input type="range" id="jk-tex" min="5" max="600" value="40" step="5" style="width:100%;accent-color:var(--ep-cyan)" oninput="updateDial('jk-tex','dial-tex','disp-tex',207,5,600,'s')">
+          <svg width="80" height="80" viewBox="0 0 80 80" style="margin-top:2px">
+            <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="5"/>
+            <circle id="dial-tre" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad2)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="176" transform="rotate(-90 40 40)"/>
+            <defs><linearGradient id="dialGrad2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs>
+            <text x="40" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-tre">15s</text>
+          </svg>
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Recupero inter-es.</div>
+          <input type="range" id="jk-tre" min="0" max="60" value="15" step="5" style="width:100%;accent-color:#a855f7" oninput="updateDial('jk-tre','dial-tre','disp-tre',207,0,60,'s')">
+        </div>
+
+        <!-- COL 3: SERIE & RECUPERO -->
+        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px">
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Serie & recupero</div>
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(6,182,212,.12)" stroke-width="5"/>
+            <circle id="dial-nset" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="176" transform="rotate(-90 40 40)"/>
+            <text x="40" y="44" text-anchor="middle" font-size="20" font-weight="800" fill="#06b6d4" font-family="Inter,system-ui" id="disp-nset">3</text>
+          </svg>
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Totali serie</div>
+          <input type="range" id="jk-nset" min="1" max="10" value="3" step="1" style="width:100%;accent-color:var(--ep-cyan)" oninput="updateDial('jk-nset','dial-nset','disp-nset',207,1,10,'')">
+          <svg width="80" height="80" viewBox="0 0 80 80" style="margin-top:2px">
+            <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="5"/>
+            <circle id="dial-trs" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad2)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="124" transform="rotate(-90 40 40)"/>
+            <text x="40" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-trs">60s</text>
+          </svg>
+          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Recupero inter-serie</div>
+          <input type="range" id="jk-trs" min="10" max="120" value="60" step="10" style="width:100%;accent-color:#a855f7" oninput="updateDial('jk-trs','dial-trs','disp-trs',207,10,120,'s')">
+        </div>
+      </div>
+
+      <!-- AVVIA -->
+      <button onclick="startSession()" style="width:100%;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple));border:none;border-radius:14px;color:#000;padding:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;letter-spacing:.05em;box-shadow:0 0 20px rgba(6,182,212,.3);text-transform:uppercase;flex-shrink:0">Avvia allenamento</button>
+
     </div>
-    <div id="jk-tab-run" style="display:none;flex-direction:column;flex:1">
+
+    <!-- TIMER IN ESECUZIONE -->
+    <div id="jk-tab-run" style="display:none;flex-direction:column;flex:1;padding:10px 12px">
       <div class="jk-run-phase" id="jk-rph">—</div>
       <div class="jk-run-timer" id="jk-rtmr">00</div>
       <div class="jk-run-prog"><div class="jk-run-prog-bar" id="jk-rbar" style="width:100%"></div></div>
@@ -378,7 +441,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
         <button class="jk-rctrl go" id="jk-pbtn" onclick="togglePause()">Pausa</button>
         <button class="jk-rctrl" onclick="skipPhase()">Salta</button>
         <button class="jk-rctrl" onclick="stopSession()">Stop</button>
-        <button class="jk-rctrl" onclick="openSpotify()" style="color:#1DB954;border-color:#1DB954">♪ Music</button>
+        <button class="jk-rctrl" onclick="openSpotify()" style="color:#1DB954;border-color:#1DB954">♪</button>
       </div>
     </div>
   </div>
@@ -423,7 +486,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Admin</span>
   </div>
-  <!-- SOTTOMENU ADMIN -->
   <div style="display:flex;gap:0;border-bottom:1px solid #1a3d2e;flex-shrink:0">
     <button class="adm-tab active" onclick="switchAdmTab('audio',this)" style="flex:1;background:var(--ep-card);border:none;border-bottom:2px solid #16d2b3;color:var(--ep-cyan);padding:8px 4px;font-size:11px;cursor:pointer;font-family:inherit">Audio</button>
     <button class="adm-tab" onclick="switchAdmTab('presenze',this)" style="flex:1;background:var(--ep-card);border:none;border-bottom:2px solid transparent;color:var(--ep-muted);padding:8px 4px;font-size:11px;cursor:pointer;font-family:inherit">Presenze</button>
@@ -512,67 +574,168 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ep-bg);font-fa
 </div>
 
 <script>
+// === GLOBAL STATE ===
 let curS=0;
-function goScreen(n){curS=n;document.getElementById('jk-sw').style.transform='translateX('+(-n*14.285)+'%)';document.querySelectorAll('.jk-nav-dot').forEach((d,i)=>d.classList.toggle('active',i===n));document.querySelectorAll('.jk-dock-btn').forEach((b,i)=>{b.classList.remove('active');if(i===n-1&&n>0)b.classList.add('active');});if(n===1){renderChips();renderPres();renderBacheca();renderEventi();}if(n===2)renderOrariCal();if(n===5)renderAvvisiScreen();}
 const GIORNI=['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'],MESI=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
 const WMO={0:'Sereno',1:'Quasi sereno',2:'Parz. nuvoloso',3:'Coperto',45:'Nebbia',51:'Pioggerella',61:'Pioggia',71:'Neve',80:'Rovescio',95:'Temporale'};
 const CORSI=[{id:'jj-junior',nome:'Ju-Jitsu Bambini',sub:'Pomeridiano',giorni:[1,3,5],inizio:17,fine:19,ist:'Luca Ciurli',col:'teal'},{id:'jj-mattina',nome:'Ju-Jitsu Scuola',sub:'Mattina',giorni:[2],inizio:8,fine:13,ist:'Luca Ciurli',col:'teal'},{id:'jj-adulti',nome:'Ju-Jitsu Adulti',sub:'Difesa Personale',giorni:[1,3,5],inizio:19,fine:20.5,ist:'Matteo Camerini',col:'teal'},{id:'karate',nome:'Karate',sub:'',giorni:[2,4],inizio:17,fine:20,ist:'Massimiliano Mudanò',col:'amber'}];
-function updateClock(){const n=new Date();document.getElementById('jk-clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');document.getElementById('jk-date').textContent=GIORNI[n.getDay()]+' '+n.getDate()+' '+MESI[n.getMonth()]+' '+n.getFullYear();document.getElementById('jk-day-pill').innerHTML='<strong>'+GIORNI[n.getDay()]+'</strong>';updateCorsoLive();}
-updateClock();setInterval(updateClock,10000);
-async function fetchWeather(){try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=43.05&longitude=10.62&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weathercode&wind_speed_unit=kmh&timezone=Europe/Rome'),d=await r.json(),c=d.current;document.getElementById('jk-wt').textContent=Math.round(c.temperature_2m)+'°';document.getElementById('jk-wd').textContent=(WMO[c.weathercode]||'—')+' · Campiglia M.';document.getElementById('jk-wh').textContent=Math.round(c.relative_humidity_2m)+'%';document.getElementById('jk-ww').textContent=Math.round(c.wind_speed_10m)+' km/h';document.getElementById('jk-wf').textContent=Math.round(c.apparent_temperature)+'°';}catch(e){}}
-fetchWeather();setInterval(fetchWeather,600000);
-function fmtH(h){return Math.floor(h)+':'+String(Math.round((h%1)*60)).padStart(2,'0');}
-function getCorsoOra(){const n=new Date(),dow=n.getDay(),h=n.getHours()+n.getMinutes()/60;return CORSI.find(c=>c.giorni.includes(dow)&&h>=c.inizio&&h<c.fine)||null;}
-function getCorsoGiorno(){return CORSI.filter(c=>c.giorni.includes(new Date().getDay()));}
-function getAutoCorso(){const dow=new Date().getDay();if([1,3,5].includes(dow))return'jj-junior';if(dow===2)return'jj-mattina';if([2,4].includes(dow))return'karate';return null;}
-function updateCorsoLive(){const c=getCorsoOra(),badge=document.getElementById('jk-live-badge'),title=document.getElementById('jk-live-title'),meta=document.getElementById('jk-live-meta'),pills=document.getElementById('jk-live-pills');if(c){badge.textContent='● Live adesso';badge.style.color='#bdf8ee';title.textContent=c.nome+(c.sub?' — '+c.sub:'');meta.textContent=fmtH(c.inizio)+' – '+fmtH(c.fine)+' · '+c.ist;pills.innerHTML='<div class="jk-mini-pill">'+c.nome+'</div>';}else{badge.textContent='● Nessun corso attivo';badge.style.color='#7aaa8a';title.textContent='Palestra libera';meta.textContent='Prossimo corso: vedi orari';pills.innerHTML='';}const now=new Date(),h=now.getHours()+now.getMinutes()/60,prossimi=getCorsoGiorno().filter(x=>x.inizio>h).slice(0,3),el=document.getElementById('jk-next-list');el.innerHTML=prossimi.length?prossimi.map(x=>`<div class="jk-next-item"><div class="jk-next-time">${fmtH(x.inizio)}</div><div class="jk-next-info"><strong>${x.nome}</strong><span>${x.ist}</span></div><div class="jk-tag ${x.col}">in arrivo</div></div>`).join(''):'<div style="font-size:12px;color:var(--ep-muted);padding:8px 0">Nessun altro corso oggi</div>';}
-let avvisi=JSON.parse(localStorage.getItem('jk_avvisi')||'[]'),eventi=JSON.parse(localStorage.getItem('jk_eventi')||'[{"g":7,"m":"dic","nome":"Trofeo Jutsuka 2025","luogo":"Campiglia M."},{"g":15,"m":"feb","nome":"Coppa Carnevale 2026","luogo":"TBD"}]'),iscritti=JSON.parse(localStorage.getItem('jk_iscritti')||'null')||{
+
+let avvisi=JSON.parse(localStorage.getItem('jk_avvisi')||'[]');
+let eventi=JSON.parse(localStorage.getItem('jk_eventi')||'[{"g":7,"m":"dic","nome":"Trofeo Jutsuka 2025","luogo":"Campiglia M."},{"g":15,"m":"feb","nome":"Coppa Carnevale 2026","luogo":"TBD"}]');
+let iscritti=JSON.parse(localStorage.getItem('jk_iscritti')||'null')||{
 'jj-junior':['Ammannato Stefano ⚠','Aziki Amira','Blanco Vittoria','Botti Orsini Leonardo','Caliani Gabriele','Caliani Giorgia','De Luca Lenora','De Santis Dante','Di Tullio Gabriel','Essalim Reem','Giavatto Vittorio Ignazio','Labiad Amir','Pini Linda','Pini Matteo','Roccaforte Amaranta','Sozzi Niccolò ⚠','Trishkiu Giorgio','Zazzeri Tommaso','Zouhair Yousra'],
 'jj-mattina':['Conti Gabriele','Conti Samuele','D\'Onofrio Giulio','Gatteschi Alessio','Gatteschi Ilenia'],
 'jj-adulti':['Angeli Greta','Bertolozzi Daniele ⏸','Ceccherini Mauro ⏸','Ciurli Luca','Coviello Flavia','Crociani Daniele','De Monaco Nicola ⚠','Espinoza Thayra','Hurt Quinn','Maggi Asia','Mari Andrea','Mazzarano Bianca','Murtas Gioele','Paponi Giacomo','Provenzano Matilde','Ruggiero Luca','Salvini Filippo','Vannozzi Alessandro ⏸'],
 'karate':['Bartoli Giovanni','Ben Bih Tasmine ⚠','Canu Sophia','Caroti Gabriel','Caroti Riccardo','Casini Gianluca','Cecchetti Andrea','Fabiano Alessio','Fabiano Pietro','Gebenini Gabriele','Mudanò Sara','Nardi Diego','Pierini Filippo','Rossetti Giulia ⚠','Sinopoli Lorenzo','Sinopoli Martina','Sylla Adja','Sylla Seynabou']
-},presenze=JSON.parse(localStorage.getItem('jk_pres')||'{}');
+};
+let presenze=JSON.parse(localStorage.getItem('jk_pres')||'{}');
+let presets=JSON.parse(localStorage.getItem('jk_presets')||'[]');
 let corsoAttivo=getAutoCorso()||'jj-junior';
-function renderAvvisiHome(){const el=document.getElementById('jk-avvisi-home');if(!avvisi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun avviso</div>';return;}el.innerHTML=[...avvisi].reverse().slice(0,3).map(a=>`<div class="jk-alert"><div class="jk-alert-dot" style="background:#16d2b3"></div><div><strong>${a.testo.slice(0,40)}${a.testo.length>40?'…':''}</strong><span>${a.data}</span></div></div>`).join('');}
-renderAvvisiHome();
+
+let clockInterval=null, weatherInterval=null, spProgressTimer=null;
+
+function goScreen(n){
+  curS=n;
+  document.getElementById('jk-sw').style.transform='translateX('+(-n*14.285)+'%)';
+  document.querySelectorAll('.jk-nav-dot').forEach((d,i)=>d.classList.toggle('active',i===n));
+  document.querySelectorAll('.jk-dock-btn').forEach((b,i)=>{b.classList.remove('active');if(i===n-1&&n>0)b.classList.add('active');});
+  if(n===1){renderChips();renderPres();renderBacheca();renderEventi();}
+  if(n===2)renderOrariCal();
+  if(n===5)renderAvvisiScreen();
+}
+
+function updateClock(){
+  const n=new Date();
+  document.getElementById('jk-clock').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
+  document.getElementById('jk-date').textContent=GIORNI[n.getDay()]+' '+n.getDate()+' '+MESI[n.getMonth()]+' '+n.getFullYear();
+  document.getElementById('jk-day-pill').innerHTML='<strong>'+GIORNI[n.getDay()]+'</strong>';
+  updateCorsoLive();
+}
+clockInterval=setInterval(updateClock,10000);
+updateClock();
+
+async function fetchWeather(){
+  try{
+    const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=43.05&longitude=10.62&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,weathercode&wind_speed_unit=kmh&timezone=Europe/Rome');
+    const d=await r.json(),c=d.current;
+    document.getElementById('jk-wt').textContent=Math.round(c.temperature_2m)+'°';
+    document.getElementById('jk-wd').textContent=(WMO[c.weathercode]||'—')+' · Campiglia M.';
+    document.getElementById('jk-wh').textContent=Math.round(c.relative_humidity_2m)+'%';
+    document.getElementById('jk-ww').textContent=Math.round(c.wind_speed_10m)+' km/h';
+    document.getElementById('jk-wf').textContent=Math.round(c.apparent_temperature)+'°';
+  }catch(e){
+    document.getElementById('jk-wd').textContent='Meteo non disponibile';
+  }
+}
+fetchWeather();
+weatherInterval=setInterval(fetchWeather,600000);
+
+function fmtH(h){return Math.floor(h)+':'+String(Math.round((h%1)*60)).padStart(2,'0');}
+function getCorsoOra(){const n=new Date(),dow=n.getDay(),h=n.getHours()+n.getMinutes()/60;return CORSI.find(c=>c.giorni.includes(dow)&&h>=c.inizio&&h<c.fine)||null;}
+function getCorsoGiorno(){return CORSI.filter(c=>c.giorni.includes(new Date().getDay()));}
+function getAutoCorso(){const dow=new Date().getDay();if([1,3,5].includes(dow))return'jj-junior';if(dow===2)return'jj-mattina';if([2,4].includes(dow))return'karate';return null;}
+function updateCorsoLive(){const c=getCorsoOra(),badge=document.getElementById('jk-live-badge'),title=document.getElementById('jk-live-title'),meta=document.getElementById('jk-live-meta'),pills=document.getElementById('jk-live-pills');if(c){badge.textContent='● Live adesso';badge.style.color='#bdf8ee';title.textContent=c.nome+(c.sub?' — '+c.sub:'');meta.textContent=fmtH(c.inizio)+' – '+fmtH(c.fine)+' · '+c.ist;pills.innerHTML='<div class="jk-mini-pill">'+c.nome+'</div>';}else{badge.textContent='● Nessun corso attivo';badge.style.color='var(--ep-muted)';title.textContent='Palestra libera';meta.textContent='Prossimo corso: vedi orari';pills.innerHTML='';}}
+
 function switchTab(id,btn){document.querySelectorAll('.jk-tab-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.jk-tab').forEach(b=>b.classList.remove('active'));document.getElementById('jk-tab-'+id).classList.add('active');btn.classList.add('active');}
 const NOMI={'jj-junior':'JJ Bambini','jj-mattina':'JJ Scuola','jj-adulti':'JJ Adulti','karate':'Karate'};
-function renderChips(){const auto=getAutoCorso(),el=document.getElementById('jk-chips'),lbl=document.getElementById('jk-auto-label');lbl.textContent=auto?'(auto per oggi)':'';el.innerHTML=Object.keys(iscritti).map(k=>`<button class="jk-chip${k===corsoAttivo?' active':''}${k===auto&&k!==corsoAttivo?' auto-today':''}" onclick="selectCorso('${k}')">${NOMI[k]||k}</button>`).join('');}
-function selectCorso(k){corsoAttivo=k;renderChips();renderPres();}
-function renderPres(){
-const today=new Date().toDateString(),el=document.getElementById('jk-pres-list'),cnt=document.getElementById('jk-pres-count');
-let html='';
-const GRUPPI={
-'jj-junior':[{id:'jj-junior',label:'JJ Bambini · 17:00–19:00'}],
-'jj-mattina':[{id:'jj-mattina',label:'JJ Scuola Mattina'}],
-'jj-adulti':[{id:'jj-adulti',label:'JJ Adulti · 19:00–20:30'}],
-'karate':[{id:'karate',label:'Karate · 17:00–20:00'}]
-};
-const gruppi=GRUPPI[corsoAttivo]||[{id:corsoAttivo,label:NOMI[corsoAttivo]}];
-let totP=0,totA=0;
-gruppi.forEach(g=>{
-const key=g.id+'_'+today;
-if(!presenze[key])presenze[key]={};
-const list=iscritti[g.id]||[],np=list.filter(n=>presenze[key][n]).length;
-totP+=np;totA+=list.length;
-html+=`<div class="jk-divider"><span>${g.label} · ${np}/${list.length}</span></div>`;
-html+=list.map(nome=>{
-const p=!!presenze[key][nome],ora=presenze[key][nome]||'';
-const pausa=nome.includes('⏸');
-return`<div class="jk-member${p?' present':''}" onclick="togglePres('${g.id}','${nome}')"><div class="jk-check"><div class="jk-check-inner"></div></div><div class="jk-member-name" style="${pausa?'opacity:.5':''}">${nome}</div>${p?`<div class="jk-member-time">${ora}</div>`:''}</div>`;
-}).join('');
-});
-cnt.textContent=totP+'/'+totA+' presenti';el.innerHTML=html;
+function renderChips(){
+  const auto=getAutoCorso();
+  const el=document.getElementById('jk-chips');
+  const lbl=document.getElementById('jk-auto-label');
+  lbl.textContent=auto?'(auto per oggi: '+NOMI[auto]+')':'';
+  el.innerHTML=Object.keys(iscritti).map(k=>{
+    let classes='jk-chip';
+    if(k===corsoAttivo) classes+=' active';
+    else if(k===auto) classes+=' auto-today';
+    return `<button class="${classes}" onclick="selectCorso('${k}')">${NOMI[k]||k}</button>`;
+  }).join('');
 }
-function togglePres(corso,nome){const key=corso+'_'+new Date().toDateString();if(!presenze[key])presenze[key]={};if(presenze[key][nome]){delete presenze[key][nome];}else{const n=new Date();presenze[key][nome]=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}localStorage.setItem('jk_pres',JSON.stringify(presenze));renderPres();}
-function renderBacheca(){const el=document.getElementById('jk-bacheca-list');if(!avvisi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun avviso</div>';return;}el.innerHTML=[...avvisi].reverse().map((a,ri)=>{const i=avvisi.length-1-ri;return`<div class="jk-avviso"><div class="jk-avviso-data">${a.data}</div><div class="jk-avviso-text">${a.testo}</div><button onclick="delAvviso(${i})" style="margin-top:6px;background:rgba(239,68,68,.1);border:1.5px solid rgba(239,68,68,.35);border-radius:7px;color:#fca5a5;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Elimina</button></div>`;}).join('');}
-function addAvviso(){const t=document.getElementById('jk-avviso-input').value.trim();if(!t)return;const n=new Date();avvisi.push({testo:t,data:n.getDate()+'/'+(n.getMonth()+1)+'/'+n.getFullYear()});localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));document.getElementById('jk-avviso-input').value='';renderBacheca();renderAvvisiHome();}
-function delAvviso(i){avvisi.splice(i,1);localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));renderBacheca();renderAvvisiHome();}
-function renderEventi(){const el=document.getElementById('jk-eventi-list');if(!eventi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun evento</div>';return;}el.innerHTML=eventi.map((e,i)=>`<div class="jk-evento"><div class="jk-ev-date"><div class="jk-ev-day">${e.g}</div><div class="jk-ev-mon">${e.m}</div></div><div style="flex:1"><div class="jk-ev-nome">${e.nome}</div><div class="jk-ev-luogo">${e.luogo}</div></div><button onclick="delEvento(${i})" style="background:rgba(239,68,68,.1);border:1.5px solid rgba(239,68,68,.35);border-radius:8px;color:#fca5a5;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0">Elimina</button></div>`).join('');}
-function addEvento(){const g=document.getElementById('ev-g').value,m=document.getElementById('ev-m').value.trim(),nome=document.getElementById('ev-nome').value.trim(),luogo=document.getElementById('ev-luogo').value.trim();if(!g||!nome)return;eventi.push({g,m,nome,luogo});localStorage.setItem('jk_eventi',JSON.stringify(eventi));['ev-g','ev-m','ev-nome','ev-luogo'].forEach(id=>document.getElementById(id).value='');renderEventi();}
+function selectCorso(k){corsoAttivo=k;renderChips();renderPres();}
+
+function renderPres(){
+  const todayISO=new Date().toISOString().slice(0,10);
+  const el=document.getElementById('jk-pres-list'),cnt=document.getElementById('jk-pres-count');
+  let html='';
+  const GRUPPI={
+    'jj-junior':[{id:'jj-junior',label:'JJ Bambini · 17:00–19:00'}],
+    'jj-mattina':[{id:'jj-mattina',label:'JJ Scuola Mattina'}],
+    'jj-adulti':[{id:'jj-adulti',label:'JJ Adulti · 19:00–20:30'}],
+    'karate':[{id:'karate',label:'Karate · 17:00–20:00'}]
+  };
+  const gruppi=GRUPPI[corsoAttivo]||[{id:corsoAttivo,label:NOMI[corsoAttivo]}];
+  let totP=0,totA=0;
+  gruppi.forEach(g=>{
+    const key=g.id+'_'+todayISO;
+    if(!presenze[key])presenze[key]={};
+    const list=iscritti[g.id]||[],np=list.filter(n=>presenze[key][n]).length;
+    totP+=np;totA+=list.length;
+    html+=`<div class="jk-divider"><span>${g.label} · ${np}/${list.length}</span></div>`;
+    html+=list.map(nome=>{
+      const p=!!presenze[key][nome],ora=presenze[key][nome]||'';
+      const pausa=nome.includes('⏸');
+      return`<div class="jk-member${p?' present':''}" onclick="togglePres('${g.id}','${nome}')"><div class="jk-check"><div class="jk-check-inner"></div></div><div class="jk-member-name" style="${pausa?'opacity:.5':''}">${nome}</div>${p?`<div class="jk-member-time">${ora}</div>`:''}</div>`;
+    }).join('');
+  });
+  cnt.textContent=totP+'/'+totA+' presenti';el.innerHTML=html;
+}
+
+function togglePres(corso,nome){
+  const todayISO=new Date().toISOString().slice(0,10);
+  const key=corso+'_'+todayISO;
+  if(!presenze[key])presenze[key]={};
+  if(presenze[key][nome]){
+    delete presenze[key][nome];
+  }else{
+    const n=new Date();
+    presenze[key][nome]=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
+  }
+  localStorage.setItem('jk_pres',JSON.stringify(presenze));
+  renderPres();
+}
+
+function renderBacheca(){
+  const el=document.getElementById('jk-bacheca-list');
+  if(!avvisi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun avviso</div>';return;}
+  el.innerHTML=[...avvisi].reverse().map((a,ri)=>{const i=avvisi.length-1-ri;return`<div class="jk-avviso"><div class="jk-avviso-data">${a.data}</div><div class="jk-avviso-text">${a.testo}</div><button onclick="delAvviso(${i})" style="margin-top:6px;background:rgba(239,68,68,.1);border:1.5px solid rgba(239,68,68,.35);border-radius:7px;color:#fca5a5;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Elimina</button></div>`;}).join('');
+}
+function addAvviso(){
+  const t=document.getElementById('jk-avviso-input').value.trim();if(!t)return;
+  const n=new Date();avvisi.push({testo:t,data:n.getDate()+'/'+(n.getMonth()+1)+'/'+n.getFullYear()});
+  localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));
+  document.getElementById('jk-avviso-input').value='';renderBacheca();
+}
+function delAvviso(i){avvisi.splice(i,1);localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));renderBacheca();}
+function renderEventi(){
+  const el=document.getElementById('jk-eventi-list');
+  if(!eventi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun evento</div>';return;}
+  el.innerHTML=eventi.map((e,i)=>`<div class="jk-evento"><div class="jk-ev-date"><div class="jk-ev-day">${e.g}</div><div class="jk-ev-mon">${e.m}</div></div><div style="flex:1"><div class="jk-ev-nome">${e.nome}</div><div class="jk-ev-luogo">${e.luogo}</div></div><button onclick="delEvento(${i})" style="background:rgba(239,68,68,.1);border:1.5px solid rgba(239,68,68,.35);border-radius:8px;color:#fca5a5;padding:6px 12px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0">Elimina</button></div>`).join('');
+}
+function addEvento(){
+  const g=document.getElementById('ev-g').value,m=document.getElementById('ev-m').value.trim(),nome=document.getElementById('ev-nome').value.trim(),luogo=document.getElementById('ev-luogo').value.trim();
+  if(!g||!nome)return;
+  eventi.push({g,m,nome,luogo});localStorage.setItem('jk_eventi',JSON.stringify(eventi));
+  ['ev-g','ev-m','ev-nome','ev-luogo'].forEach(id=>document.getElementById(id).value='');renderEventi();
+}
 function delEvento(i){eventi.splice(i,1);localStorage.setItem('jk_eventi',JSON.stringify(eventi));renderEventi();}
-function renderOrariCal(){document.getElementById('jk-orari-cal').innerHTML='<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ep-muted);margin-bottom:8px">Settimana tipo</div>'+[{label:'Lunedì / Mercoledì / Venerdì',corsi:[{nome:'Ju-Jitsu Bambini (Pomeridiano)',orario:'17:00 – 19:00',ist:'Luca Ciurli',col:'teal'},{nome:'Ju-Jitsu Adulti & Difesa Personale',orario:'19:00 – 20:30',ist:'Matteo Camerini',col:'teal'}]},{label:'Martedì',corsi:[{nome:'Ju-Jitsu Scuola Mattina',orario:'Mattina',ist:'Luca Ciurli',col:'teal'},{nome:'Karate',orario:'17:00 – 20:00',ist:'Massimiliano Mudanò',col:'amber'}]},{label:'Giovedì',corsi:[{nome:'Karate',orario:'17:00 – 20:00',ist:'Massimiliano Mudanò',col:'amber'}]}].map(d=>`<div style="margin-bottom:14px"><div class="jk-divider"><span>${d.label}</span></div>${d.corsi.map(c=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;background:var(--ep-card);border:1px solid var(--ep-border);margin-bottom:5px"><div style="width:3px;height:36px;border-radius:2px;background:${c.col==='teal'?'#16d2b3':'#f1a425'};flex-shrink:0"></div><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--ep-text)">${c.nome}</div><div style="font-size:11px;color:var(--ep-muted);margin-top:2px">${c.ist}</div></div><div class="jk-tag ${c.col}">${c.orario}</div></div>`).join('')}</div>`).join('');}
-function openSpotify(){window.location.href='intent://open#Intent;package=com.spotify.music;scheme=spotify;end';setTimeout(()=>{window.location.href='https://open.spotify.com';},1500);}
+
+function renderOrariCal(){
+  const now=new Date(),h=now.getHours()+now.getMinutes()/60;
+  const prossimi=getCorsoGiorno().filter(x=>x.inizio>h);
+  let prossimiHtml='';
+  if(prossimi.length){
+    prossimiHtml=`<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ep-cyan);margin-bottom:8px">Prossimi corsi oggi</div>`+
+    prossimi.map(x=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;background:rgba(6,182,212,.06);border:1px solid var(--ep-border-a);margin-bottom:6px"><div style="width:3px;height:36px;border-radius:2px;background:${x.col==='teal'?'var(--ep-cyan)':'#f59e0b'};flex-shrink:0"></div><div style="flex:1"><div style="font-size:14px;font-weight:700;color:var(--ep-magenta)">${fmtH(x.inizio)}</div><div style="font-size:13px;font-weight:600;color:var(--ep-text)">${x.nome}</div><div style="font-size:11px;color:var(--ep-muted);margin-top:2px">${x.ist}</div></div><div class="jk-tag ${x.col}">in arrivo</div></div>`).join('');
+    prossimiHtml+=`<div class="jk-divider" style="margin:12px 0 10px"><span>Orari settimanali</span></div>`;
+  }
+  const fissi=[{label:'Lunedì / Mercoledì / Venerdì',corsi:[{nome:'Ju-Jitsu Bambini (Pomeridiano)',orario:'17:00 – 19:00',ist:'Luca Ciurli',col:'teal'},{nome:'Ju-Jitsu Adulti & Difesa Personale',orario:'19:00 – 20:30',ist:'Matteo Camerini',col:'teal'}]},{label:'Martedì',corsi:[{nome:'Ju-Jitsu Scuola Mattina',orario:'Mattina',ist:'Luca Ciurli',col:'teal'},{nome:'Karate',orario:'17:00 – 20:00',ist:'Massimiliano Mudanò',col:'amber'}]},{label:'Giovedì',corsi:[{nome:'Karate',orario:'17:00 – 20:00',ist:'Massimiliano Mudanò',col:'amber'}]}];
+  document.getElementById('jk-orari-cal').innerHTML=prossimiHtml+fissi.map(d=>`<div style="margin-bottom:14px"><div class="jk-divider"><span>${d.label}</span></div>${d.corsi.map(c=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;background:var(--ep-card);border:1px solid var(--ep-border);margin-bottom:5px"><div style="width:3px;height:36px;border-radius:2px;background:${c.col==='teal'?'var(--ep-cyan)':'#f59e0b'};flex-shrink:0"></div><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--ep-text)">${c.nome}</div><div style="font-size:11px;color:var(--ep-muted);margin-top:2px">${c.ist}</div></div><div class="jk-tag ${c.col}">${c.orario}</div></div>`).join('')}</div>`).join('');
+}
+
+function openSpotify(){
+  const intent='intent://open#Intent;package=com.spotify.music;scheme=spotify;end';
+  window.location.href=intent;
+  setTimeout(()=>{ window.location.href='https://open.spotify.com'; },2000);
+}
 
 let spPlaying=false;
 function spPlayPause(){
@@ -586,7 +749,7 @@ function spPlayPause(){
     document.getElementById('sp-artist').textContent='Controlla su Spotify';
   }else{
     icon.innerHTML='<polygon points="5 3 19 12 5 21 5 3"/>';
-    clearInterval(spProgressTimer);
+    if(spProgressTimer){clearInterval(spProgressTimer);spProgressTimer=null;}
   }
   window.location.href='intent://play#Intent;package=com.spotify.music;scheme=spotify;end';
 }
@@ -600,15 +763,16 @@ function spCmd(cmd){
   if(urls[cmd])window.location.href=urls[cmd];
   else openSpotify();
 }
-let spProgressTimer=null,spProg=35;
+let spProg=35;
 function animateProgress(){
-  clearInterval(spProgressTimer);
+  if(spProgressTimer)clearInterval(spProgressTimer);
   spProgressTimer=setInterval(()=>{
     spProg=(spProg+.05)%100;
     const el=document.getElementById('sp-progress');
     if(el)el.style.width=spProg+'%';
   },500);
 }
+
 const AudioCtx=window.AudioContext||window.webkitAudioContext;let actx=null,audioEnabled=false;
 function getACtx(){if(!actx)actx=new AudioCtx();return actx;}
 function enableAudio(){
@@ -623,22 +787,48 @@ function enableAudio(){
 }
 function beepRaw(f,d,v){try{const a=getACtx(),o=a.createOscillator(),g=a.createGain();o.connect(g);g.connect(a.destination);o.frequency.value=f;g.gain.setValueAtTime(v||.4,a.currentTime);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+d);o.start();o.stop(a.currentTime+d);}catch(e){}}
 function beep(f,d,v){if(!audioEnabled)return;beepRaw(f,d,v);}
+function beepLong(){beep(880,1.8,.5);}
 function beepStart(){beep(880,.12,.5);setTimeout(()=>beep(1100,.12,.5),130);}
 function beepEnd(){beep(440,.18,.5);setTimeout(()=>beep(330,.3,.4),200);}
 function beepFinish(){[0,150,300,500].forEach(d=>setTimeout(()=>beep(1320,.15,.6),d));}
 function beepCount(){beep(660,.08,.3);}
-function exportData(){const data={avvisi,eventi,iscritti,presenze,presets};const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='jutsuka_backup_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href);}
+
+function exportData(){
+  const data={avvisi,eventi,iscritti,presenze,presets};
+  const b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);
+  a.download='jutsuka_backup_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click();URL.revokeObjectURL(a.href);
+}
 function importData(file){if(!file)return;const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);if(d.avvisi){avvisi=d.avvisi;localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));}if(d.eventi){eventi=d.eventi;localStorage.setItem('jk_eventi',JSON.stringify(eventi));}if(d.iscritti){iscritti=d.iscritti;localStorage.setItem('jk_iscritti',JSON.stringify(iscritti));}if(d.presenze){presenze=d.presenze;localStorage.setItem('jk_pres',JSON.stringify(presenze));}if(d.presets){presets=d.presets;localStorage.setItem('jk_presets',JSON.stringify(presets));}alert('Import completato!');location.reload();}catch(err){alert('File non valido');}};r.readAsText(file);}
 function resetData(){if(confirm('Tutti i dati correnti andranno persi. Continuare?')){localStorage.clear();location.reload();}}
-function renderAvvisiScreen(){const el=document.getElementById('jk-avvisi-screen');if(!avvisi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun avviso attivo</div>';return;}el.innerHTML=[...avvisi].reverse().map((a,ri)=>{const i=avvisi.length-1-ri;return`<div class="jk-avviso"><div class="jk-avviso-data">${a.data}</div><div class="jk-avviso-text">${a.testo}</div><button onclick="delAvvisoScreen(${i})" style="margin-top:6px;background:rgba(239,68,68,.1);border:1.5px solid rgba(239,68,68,.35);border-radius:7px;color:#fca5a5;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Elimina</button></div>`;}).join('');}
-function addAvvisoScreen(){const t=document.getElementById('jk-avviso-screen-input').value.trim();if(!t)return;const n=new Date();avvisi.push({testo:t,data:n.getDate()+'/'+(n.getMonth()+1)+'/'+n.getFullYear()});localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));document.getElementById('jk-avviso-screen-input').value='';renderAvvisiScreen();renderAvvisiHome();}
-function delAvvisoScreen(i){avvisi.splice(i,1);localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));renderAvvisiScreen();renderAvvisiHome();}
-let exercises=[],presets=JSON.parse(localStorage.getItem('jk_presets')||'[]'),exCounter=0;
+
+function renderAvvisiScreen(){
+  const el=document.getElementById('jk-avvisi-screen');
+  if(!avvisi.length){el.innerHTML='<div style="font-size:12px;color:var(--ep-muted);padding:4px 0">Nessun avviso attivo</div>';return;}
+  el.innerHTML=[...avvisi].reverse().map((a,ri)=>{const i=avvisi.length-1-ri;return`<div class="jk-avviso"><div class="jk-avviso-data">${a.data}</div><div class="jk-avviso-text">${a.testo}</div><button onclick="delAvvisoScreen(${i})" style="margin-top:6px;background:rgba(239,68,68,.1);border:1.5px solid rgba(239,68,68,.35);border-radius:7px;color:#fca5a5;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">Elimina</button></div>`;}).join('');
+}
+function addAvvisoScreen(){
+  const t=document.getElementById('jk-avviso-screen-input').value.trim();if(!t)return;
+  const n=new Date();avvisi.push({testo:t,data:n.getDate()+'/'+(n.getMonth()+1)+'/'+n.getFullYear()});
+  localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));
+  document.getElementById('jk-avviso-screen-input').value='';renderAvvisiScreen();
+}
+function delAvvisoScreen(i){avvisi.splice(i,1);localStorage.setItem('jk_avvisi',JSON.stringify(avvisi));renderAvvisiScreen();}
+
+let exercises=[],exCounter=0;
 function renderExList(){document.getElementById('jk-ex-list').innerHTML=exercises.map((e,i)=>`<div class="jk-ex-item"><span>${i+1}. ${e}</span><button onclick="delEx(${i})">×</button></div>`).join('')||'<div style="font-size:11px;color:var(--ep-muted)">Nessun esercizio</div>';}
 function addEx(){const inp=document.getElementById('jk-newex'),v=inp.value.trim()||(()=>{exCounter++;return'Esercizio '+exCounter;})();inp.value='';exercises.push(v);renderExList();}
 function delEx(i){exercises.splice(i,1);renderExList();}
-function switchAdmTab(id,btn){document.querySelectorAll('.adm-tab').forEach(b=>{b.style.color='#7aaa8a';b.style.borderBottomColor='transparent';});btn.style.color='#16d2b3';btn.style.borderBottomColor='#16d2b3';document.querySelectorAll('.adm-panel').forEach(p=>{p.style.display='none';});document.getElementById('adm-'+id).style.display='flex';if(id==='presenze')initMesiSelector();}
-function toggleCorsoSel(btn){const active=btn.classList.contains('active');btn.classList.toggle('active',!active);btn.style.background=active?'#1a3d2e':'#1f5a40';btn.style.borderColor=active?'#2a6b50':'#16d2b3';btn.style.color=active?'#c8e8d8':'#bdf8ee';}
+
+function switchAdmTab(id,btn){
+  document.querySelectorAll('.adm-tab').forEach(b=>{b.style.color='#7aaa8a';b.style.borderBottomColor='transparent';});
+  btn.style.color='#16d2b3';btn.style.borderBottomColor='#16d2b3';
+  document.querySelectorAll('.adm-panel').forEach(p=>{p.style.display='none';});
+  document.getElementById('adm-'+id).style.display='flex';
+  if(id==='presenze')initMesiSelector();
+}
+function toggleCorsoSel(btn){btn.classList.toggle('active');}
 function getCorsiSelezionati(){return Array.from(document.querySelectorAll('.pres-corso-btn.active')).map(b=>b.dataset.corso);}
 function getMesiSelezionati(){return Array.from(document.querySelectorAll('.mese-btn.active')).map(b=>b.dataset.mese);}
 
@@ -648,7 +838,8 @@ function initMesiSelector(){
   Object.keys(presenze).forEach(k=>{
     const parts=k.split('_');
     if(parts.length>=2){
-      const d=new Date(parts.slice(1).join('_'));
+      const dateStr=parts.slice(1).join('_');
+      const d=new Date(dateStr+'T00:00:00');
       if(!isNaN(d))mesiDisp.add(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));
     }
   });
@@ -662,7 +853,7 @@ function initMesiSelector(){
     return`<button class="mese-btn active" data-mese="${m}" onclick="toggleMese(this)" style="background:rgba(6,182,212,.15);border:1.5px solid #16d2b3;border-radius:999px;color:var(--ep-glow);padding:5px 11px;font-size:11px;cursor:pointer;font-family:inherit">${MNOMI[+mo-1]} ${y}</button>`;
   }).join('');
 }
-function toggleMese(btn){const active=btn.classList.contains('active');btn.classList.toggle('active',!active);btn.style.background=active?'#1a3d2e':'#1f5a40';btn.style.borderColor=active?'#2a6b50':'#16d2b3';btn.style.color=active?'#c8e8d8':'#bdf8ee';}
+function toggleMese(btn){btn.classList.toggle('active');}
 
 function buildPresenzeTable(){
   const mesi=getMesiSelezionati();
@@ -681,7 +872,7 @@ function buildPresenzeTable(){
         Object.keys(presenze).forEach(k=>{
           if(!k.startsWith(corso+'_'))return;
           const dateStr=k.slice(corso.length+1);
-          const d=new Date(dateStr);
+          const d=new Date(dateStr+'T00:00:00');
           if(isNaN(d))return;
           if(d.getFullYear()==+y&&d.getMonth()+1==+mo&&presenze[k][nome])count++;
         });
@@ -796,19 +987,185 @@ async function btConnect(){
 }
 
 function renderPresets(){const el=document.getElementById('jk-preset-row');if(!presets.length){el.innerHTML='<span style="font-size:11px;color:var(--ep-muted)">Nessun preset</span>';return;}el.innerHTML=presets.map((p,i)=>`<button class="jk-preset-chip" onclick="loadPreset(${i})">${p.name}</button>`).join('');}
-function savePreset(){const name=document.getElementById('jk-pname').value.trim()||'Sessione '+(presets.length+1);presets.push({name,exercises:[...exercises],tex:+document.getElementById('jk-tex').value,reon:document.getElementById('jk-reon').checked,tre:+document.getElementById('jk-tre').value,trs:+document.getElementById('jk-trs').value,nset:+document.getElementById('jk-nset').value});localStorage.setItem('jk_presets',JSON.stringify(presets));document.getElementById('jk-pname').value='';renderPresets();}
-function loadPreset(i){const p=presets[i];exercises=[...p.exercises];document.getElementById('jk-tex').value=p.tex;document.getElementById('jk-reon').checked=p.reon;document.getElementById('jk-tre').disabled=!p.reon;document.getElementById('jk-tre').value=p.tre;document.getElementById('jk-trs').value=p.trs;document.getElementById('jk-nset').value=p.nset;renderExList();}
-let timer=null,paused=false,tLeft=0,tTotal=0,phases=[],phIdx=0;
-function buildPhases(cfg){const list=[];for(let s=0;s<cfg.nset;s++){for(let e=0;e<cfg.exercises.length;e++){list.push({type:'ex',set:s,ex:e,dur:cfg.tex,label:cfg.exercises[e]});if(cfg.reon&&e<cfg.exercises.length-1)list.push({type:'rex',set:s,ex:e,dur:cfg.tre,label:'Recupero'});}if(s<cfg.nset-1)list.push({type:'rset',set:s,dur:cfg.trs,label:'Recupero serie'});}return list;}
-function startSession(){if(!exercises.length){exCounter++;exercises.push('Esercizio '+exCounter);renderExList();}const cfg={exercises,nset:+document.getElementById('jk-nset').value,tex:+document.getElementById('jk-tex').value,reon:document.getElementById('jk-reon').checked,tre:+document.getElementById('jk-tre').value,trs:+document.getElementById('jk-trs').value};phases=buildPhases(cfg);phIdx=0;document.getElementById('jk-tab-cfg').style.display='none';document.getElementById('jk-tab-run').style.display='flex';startPhase();}
-function startPhase(){if(phIdx>=phases.length){finishSession();return;}const ph=phases[phIdx];tLeft=ph.dur;tTotal=ph.dur;paused=false;document.getElementById('jk-pbtn').textContent='Pausa';updateRunUI();beepStart();clearInterval(timer);timer=setInterval(tick,1000);}
-function tick(){if(paused)return;tLeft--;if(tLeft<=3&&tLeft>0)beepCount();if(tLeft<=0){clearInterval(timer);beepEnd();phIdx++;setTimeout(startPhase,400);return;}updateRunUI();}
-function updateRunUI(){const ph=phases[phIdx];if(!ph)return;const ns=+document.getElementById('jk-nset').value,ne=exercises.length;document.getElementById('jk-rtmr').textContent=String(tLeft).padStart(2,'0');const pct=Math.max(0,(tLeft/tTotal)*100);document.getElementById('jk-rbar').style.width=pct+'%';document.getElementById('jk-rbar').style.background=ph.type==='ex'?'#16d2b3':'#4b8fff';let pl='',si='',ei='';if(ph.type==='ex'){pl='esercizio';si='Serie '+(ph.set+1)+'/'+ns;ei='Es. '+(ph.ex+1)+'/'+ne;}else if(ph.type==='rex'){pl='recupero';si='Serie '+(ph.set+1)+'/'+ns;ei='Es. '+(ph.ex+1)+'/'+ne;}else{pl='recupero serie';si='Serie '+(ph.set+1)+'/'+ns;ei='';}document.getElementById('jk-rph').textContent=pl;document.getElementById('jk-rsi').textContent=si;document.getElementById('jk-rei').textContent=ei;document.getElementById('jk-rcn').textContent=ph.label;const nxt=phases[phIdx+1];document.getElementById('jk-rnn').textContent=nxt?'→ '+nxt.label:'Fine!';const exP=phases.filter(p=>p.type==='ex'&&p.set===(ph.set||0));document.getElementById('jk-rexl').innerHTML=exP.map((ep,i)=>{let cls='jk-rex-row';if(ph.type==='ex'&&ph.set===ep.set&&ph.ex===ep.ex)cls+=' cur';else if(ph.set>ep.set||(ph.set===ep.set&&ph.ex>ep.ex))cls+=' done';return`<div class="${cls}"><span class="jk-rex-num">${i+1}</span><span class="jk-rex-name">${ep.label}</span></div>`;}).join('');}
-function togglePause(){paused=!paused;document.getElementById('jk-pbtn').textContent=paused?'Riprendi':'Pausa';}
-function skipPhase(){clearInterval(timer);beepEnd();phIdx++;setTimeout(startPhase,200);}
-function stopSession(){clearInterval(timer);document.getElementById('jk-tab-run').style.display='none';document.getElementById('jk-tab-cfg').style.display='flex';}
-function finishSession(){beepFinish();document.getElementById('jk-tab-run').innerHTML=`<div style="text-align:center;padding:30px 0;color:var(--ep-text)"><div style="font-size:44px;color:var(--ep-cyan);margin-bottom:10px">✓</div><div style="font-size:18px;font-weight:600">Completato!</div><button class="jk-rctrl" style="max-width:180px;margin:20px auto 0;display:block" onclick="resetTabata()">Torna alla config</button></div>`;}
-function resetTabata(){document.getElementById('jk-tab-run').style.display='none';document.getElementById('jk-tab-cfg').style.display='flex';document.getElementById('jk-tab-run').innerHTML='<div class="jk-run-phase" id="jk-rph">—</div><div class="jk-run-timer" id="jk-rtmr">00</div><div class="jk-run-prog"><div class="jk-run-prog-bar" id="jk-rbar" style="width:100%"></div></div><div class="jk-run-meta"><span id="jk-rsi">Serie 1/3</span><span id="jk-rei">Es. 1/5</span></div><div class="jk-run-cols"><div class="jk-run-cur"><div class="jk-run-cur-lbl">Ora</div><div class="jk-run-cur-name" id="jk-rcn">—</div><div class="jk-run-nxt" id="jk-rnn">—</div></div><div class="jk-run-exlist" id="jk-rexl"></div></div><div class="jk-run-ctrl"><button class="jk-rctrl go" id="jk-pbtn" onclick="togglePause()">Pausa</button><button class="jk-rctrl" onclick="skipPhase()">Salta</button><button class="jk-rctrl" onclick="stopSession()">Stop</button><button class="jk-rctrl" onclick="openSpotify()" style="color:#1DB954;border-color:#1DB954">♪ Music</button></div>';}
+function updateDial(inputId,dialId,dispId,circumf,min,max,unit){
+  const val=+document.getElementById(inputId).value;
+  const pct=(val-min)/(max-min);
+  const offset=circumf-(pct*circumf*0.85);
+  const dial=document.getElementById(dialId);
+  if(dial)dial.style.strokeDashoffset=offset;
+  const disp=document.getElementById(dispId);
+  if(disp)disp.textContent=val+unit;
+}
+function adjustVal(inputId,delta,min,max,dialId,dispId,circumf,maxRange){
+  const el=document.getElementById(inputId);
+  let v=Math.min(max,Math.max(min,(+el.value||min)+delta));
+  el.value=v;
+  const pct=(v-min)/(maxRange||max-min);
+  const offset=circumf-(pct*circumf*0.75);
+  const dial=document.getElementById(dialId);
+  if(dial)dial.style.strokeDashoffset=offset;
+  const disp=document.getElementById(dispId);
+  if(disp)disp.textContent=v;
+}
+function savePreset(){const name=document.getElementById('jk-pname').value.trim()||'Sessione '+(presets.length+1);const nex=+document.getElementById('jk-nex').value||8;presets.push({name,exercises:[...exercises],tex:+document.getElementById('jk-tex').value,tre:+document.getElementById('jk-tre').value,trs:+document.getElementById('jk-trs').value,nset:+document.getElementById('jk-nset').value,nex});localStorage.setItem('jk_presets',JSON.stringify(presets));document.getElementById('jk-pname').value='';renderPresets();}
+function loadPreset(i){const p=presets[i];exercises=[...p.exercises];const nex=p.nex||8;document.getElementById('jk-nex').value=nex;document.getElementById('jk-tex').value=p.tex;document.getElementById('jk-tre').value=p.tre||15;document.getElementById('jk-trs').value=p.trs;document.getElementById('jk-nset').value=p.nset;updateDial('jk-tex','dial-tex','disp-tex',207,5,600,'s');updateDial('jk-tre','dial-tre','disp-tre',207,0,60,'s');updateDial('jk-trs','dial-trs','disp-trs',207,10,120,'s');updateDial('jk-nset','dial-nset','disp-nset',207,1,10,'');adjustVal('jk-nex',0,1,20,'dial-nex','disp-nex',239,20);renderExList();}
+
+// ========== TABATA TIMER LOGIC (MODIFICATO) ==========
+function formatTime(sec){
+  if(sec >= 60){
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return `${m}:${String(s).padStart(2,'0')}`;
+  }
+  return String(sec).padStart(2,'0');
+}
+
+function buildPhases(cfg){
+  const list = [];
+  // Countdown iniziale di 5 secondi
+  list.push({type:'prep', dur:5, label:'Preparazione'});
+  for(let s=0; s<cfg.nset; s++){
+    for(let e=0; e<cfg.exercises.length; e++){
+      list.push({type:'ex', set:s, ex:e, dur:cfg.tex, label:cfg.exercises[e]});
+      if(cfg.reon && e < cfg.exercises.length-1){
+        list.push({type:'rex', set:s, ex:e, dur:cfg.tre, label:'Recupero'});
+      }
+      // Countdown prima del prossimo esercizio (se non è l'ultimo della serie o se ci sono altre serie)
+      if(!(s === cfg.nset-1 && e === cfg.exercises.length-1)){
+        list.push({type:'prep', dur:5, label:'Preparazione'});
+      }
+    }
+    if(s < cfg.nset-1){
+      list.push({type:'rset', set:s, dur:cfg.trs, label:'Recupero serie'});
+      list.push({type:'prep', dur:5, label:'Preparazione'});
+    }
+  }
+  return list;
+}
+
+let timer=null, paused=false, tLeft=0, tTotal=0, phases=[], phIdx=0;
+
+function startPhase(){
+  if(phIdx >= phases.length){ finishSession(); return; }
+  const ph = phases[phIdx];
+  tLeft = ph.dur;
+  tTotal = ph.dur;
+  paused = false;
+  document.getElementById('jk-pbtn').textContent = 'Pausa';
+  updateRunUI();
+  if(ph.type === 'prep'){
+    beepStart(); // bip ogni secondo durante countdown gestito in tick
+  } else {
+    beepStart();
+  }
+  if(timer) clearInterval(timer);
+  timer = setInterval(tick, 1000);
+}
+
+function tick(){
+  if(paused) return;
+  tLeft--;
+  const ph = phases[phIdx];
+  
+  // Bip durante countdown (ogni secondo)
+  if(ph.type === 'prep' && tLeft > 0){
+    beepCount();
+  }
+  // Bip ultimi 10 secondi esercizio
+  if(ph.type === 'ex' && tLeft <= 10 && tLeft > 0){
+    beepCount();
+  }
+  
+  if(tLeft <= 0){
+    clearInterval(timer);
+    if(ph.type === 'prep' || ph.type === 'ex'){
+      beepLong(); // bip lungo fine countdown o fine esercizio
+    } else {
+      beepEnd();
+    }
+    phIdx++;
+    setTimeout(startPhase, 400);
+    return;
+  }
+  updateRunUI();
+}
+
+function updateRunUI(){
+  const ph = phases[phIdx];
+  if(!ph) return;
+  const ns = +document.getElementById('jk-nset').value;
+  const ne = exercises.length;
+  
+  document.getElementById('jk-rtmr').textContent = formatTime(tLeft);
+  const pct = Math.max(0, (tLeft / tTotal) * 100);
+  document.getElementById('jk-rbar').style.width = pct+'%';
+  
+  let pl='', si='', ei='';
+  if(ph.type === 'ex'){
+    pl = 'esercizio';
+    si = 'Serie '+(ph.set+1)+'/'+ns;
+    ei = 'Es. '+(ph.ex+1)+'/'+ne;
+  } else if(ph.type === 'rex'){
+    pl = 'recupero';
+    si = 'Serie '+(ph.set+1)+'/'+ns;
+    ei = 'Es. '+(ph.ex+1)+'/'+ne;
+  } else if(ph.type === 'rset'){
+    pl = 'recupero serie';
+    si = 'Serie '+(ph.set+1)+'/'+ns;
+    ei = '';
+  } else if(ph.type === 'prep'){
+    pl = 'preparazione';
+    const nextPh = phases[phIdx+1];
+    if(nextPh && nextPh.type === 'ex'){
+      si = 'Serie '+(nextPh.set+1)+'/'+ns;
+      ei = 'Es. '+(nextPh.ex+1)+'/'+ne;
+    } else {
+      si = ''; ei = '';
+    }
+  }
+  document.getElementById('jk-rph').textContent = pl;
+  document.getElementById('jk-rsi').textContent = si;
+  document.getElementById('jk-rei').textContent = ei;
+  document.getElementById('jk-rcn').textContent = ph.label;
+  const nxt = phases[phIdx+1];
+  document.getElementById('jk-rnn').textContent = nxt ? '→ '+nxt.label : 'Fine!';
+  
+  // Lista esercizi nella colonna destra
+  const exP = phases.filter(p => p.type === 'ex' && p.set === (ph.set||0));
+  document.getElementById('jk-rexl').innerHTML = exP.map((ep,i) => {
+    let cls = 'jk-rex-row';
+    if(ph.type === 'ex' && ph.set === ep.set && ph.ex === ep.ex) cls += ' cur';
+    else if(ph.set > ep.set || (ph.set === ep.set && ph.ex > ep.ex)) cls += ' done';
+    return `<div class="${cls}"><span class="jk-rex-num">${i+1}</span><span class="jk-rex-name">${ep.label}</span></div>`;
+  }).join('');
+}
+
+function startSession(){
+  if(!exercises.length){ exCounter++; exercises.push('Esercizio '+exCounter); renderExList(); }
+  const nex = +document.getElementById('jk-nex').value || 8;
+  const exs = exercises.length >= nex ? exercises.slice(0,nex) : [...exercises, ...Array(nex-exercises.length).fill(null).map((_,i)=>'Esercizio '+(exercises.length+i+1))];
+  const cfg = {
+    exercises: exs,
+    nset: +document.getElementById('jk-nset').value || 3,
+    tex: +document.getElementById('jk-tex').value || 40,
+    reon: +document.getElementById('jk-tre').value > 0,
+    tre: +document.getElementById('jk-tre').value || 15,
+    trs: +document.getElementById('jk-trs').value || 60
+  };
+  phases = buildPhases(cfg);
+  phIdx = 0;
+  document.getElementById('jk-tab-cfg').style.display = 'none';
+  document.getElementById('jk-tab-run').style.display = 'flex';
+  startPhase();
+}
+
+function togglePause(){ paused = !paused; document.getElementById('jk-pbtn').textContent = paused ? 'Riprendi' : 'Pausa'; }
+function skipPhase(){ if(timer) clearInterval(timer); beepEnd(); phIdx++; setTimeout(startPhase, 200); }
+function stopSession(){ if(timer) clearInterval(timer); document.getElementById('jk-tab-run').style.display = 'none'; document.getElementById('jk-tab-cfg').style.display = 'flex'; }
+function finishSession(){ beepFinish(); document.getElementById('jk-tab-run').innerHTML = `<div style="text-align:center;padding:30px 0;color:var(--ep-text)"><div style="font-size:44px;color:var(--ep-cyan);margin-bottom:10px">✓</div><div style="font-size:18px;font-weight:600">Completato!</div><button class="jk-rctrl" style="max-width:180px;margin:20px auto 0;display:block" onclick="resetTabata()">Torna alla config</button></div>`; }
+function resetTabata(){ document.getElementById('jk-tab-run').style.display = 'none'; document.getElementById('jk-tab-cfg').style.display = 'flex'; location.reload(); } // Semplice ricarica per pulire
+
+// Inizializzazione
 renderPresets();renderExList();renderChips();renderPres();
 </script>
 </body>
