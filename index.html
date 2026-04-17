@@ -83,7 +83,7 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
 .jk-nav-dot.active{width:16px;border-radius:3px;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple))}
 /* SCHERMATE INTERNE */
 .jk-inner{background:var(--ep-bg);color:var(--ep-text);display:flex;flex-direction:column;overflow:hidden;width:100vw;max-width:100vw}
-.jk-inner-header{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--ep-divider);flex-shrink:0}
+.jk-inner-header{display:flex;align-items:center;gap:8px;padding:6px 10px;border-bottom:1px solid var(--ep-divider);flex-shrink:0}
 .jk-back{background:rgba(6,182,212,.08);border:1.5px solid rgba(6,182,212,.3);color:var(--ep-glow);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit}
 .jk-inner-title{font-size:14px;font-weight:600;color:var(--ep-text)}
 /* TAB BAR */
@@ -364,78 +364,76 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
     </div>
 
     <!-- CONFIG -->
-    <div id="jk-tab-cfg" style="display:flex;flex-direction:column;flex:1;overflow-y:auto;padding:10px 12px;gap:8px">
-
-      <!-- RIGA SALVA/CARICA -->
-      <div style="display:flex;justify-content:flex-end">
-        <button onclick="openPresetOverlay()" style="display:flex;align-items:center;gap:6px;background:rgba(168,85,247,.1);border:1.5px solid rgba(168,85,247,.35);border-radius:999px;color:#d8b4fe;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-          Salva / Carica preset
-        </button>
-      </div>
+    <div id="jk-tab-cfg" style="display:flex;flex-direction:column;flex:1;overflow:hidden;padding:6px 10px;gap:5px">
 
       <!-- GRIGLIA 3 COLONNE -->
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;flex:1">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;flex:1;min-height:0">
 
         <!-- COL 1: ESERCIZI PER SERIE -->
-        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:8px">
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Configurazione ciclo</div>
-          <svg width="90" height="90" viewBox="0 0 90 90">
+        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:12px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:4px;overflow:hidden">
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Configurazione ciclo</div>
+          <svg width="70" height="70" viewBox="0 0 90 90">
             <circle cx="45" cy="45" r="38" fill="none" stroke="rgba(6,182,212,.12)" stroke-width="6"/>
             <circle id="dial-nex" cx="45" cy="45" r="38" fill="none" stroke="url(#dialGrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="179" transform="rotate(-90 45 45)"/>
             <defs><linearGradient id="dialGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
-            <text x="45" y="49" text-anchor="middle" font-size="22" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-nex">8</text>
+            <text x="45" y="52" text-anchor="middle" font-size="26" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-nex">8</text>
           </svg>
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.06em">Esercizi per serie</div>
-          <div style="display:flex;gap:8px">
-            <button onclick="adjustVal('jk-nex',1,1,20,'dial-nex','disp-nex',239,20)" style="width:34px;height:34px;border-radius:8px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>
-            <button onclick="adjustVal('jk-nex',-1,1,20,'dial-nex','disp-nex',239,20)" style="width:34px;height:34px;border-radius:8px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.06em">Esercizi per serie</div>
+          <div style="display:flex;gap:6px">
+            <button onclick="adjustVal('jk-nex',1,1,20,'dial-nex','disp-nex',239,20)" style="width:30px;height:30px;border-radius:7px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>
+            <button onclick="adjustVal('jk-nex',-1,1,20,'dial-nex','disp-nex',239,20)" style="width:30px;height:30px;border-radius:7px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>
           </div>
           <input type="hidden" id="jk-nex" value="8">
         </div>
 
         <!-- COL 2: TEMPI ESERCIZIO -->
-        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Tempi esercizio</div>
-          <svg width="80" height="80" viewBox="0 0 80 80">
+        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:12px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:3px;overflow:hidden">
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Tempi esercizio</div>
+          <svg width="62" height="62" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(6,182,212,.12)" stroke-width="5"/>
             <circle id="dial-tex" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="124" transform="rotate(-90 40 40)"/>
-            <text x="40" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#06b6d4" font-family="Inter,system-ui" id="disp-tex">40s</text>
+            <text x="40" y="46" text-anchor="middle" font-size="18" font-weight="800" fill="#06b6d4" font-family="Inter,system-ui" id="disp-tex">40s</text>
           </svg>
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Durata esercizio</div>
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Durata esercizio</div>
           <input type="range" id="jk-tex" min="5" max="600" value="40" step="5" style="width:100%;accent-color:var(--ep-cyan)" oninput="updateDial('jk-tex','dial-tex','disp-tex',207,5,600,'s')">
-          <svg width="80" height="80" viewBox="0 0 80 80" style="margin-top:2px">
+          <svg width="62" height="62" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="5"/>
             <circle id="dial-tre" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad2)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="176" transform="rotate(-90 40 40)"/>
             <defs><linearGradient id="dialGrad2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#e879f9"/></linearGradient></defs>
-            <text x="40" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-tre">15s</text>
+            <text x="40" y="46" text-anchor="middle" font-size="18" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-tre">15s</text>
           </svg>
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Recupero inter-es.</div>
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Recupero inter-es.</div>
           <input type="range" id="jk-tre" min="0" max="60" value="15" step="5" style="width:100%;accent-color:#a855f7" oninput="updateDial('jk-tre','dial-tre','disp-tre',207,0,60,'s')">
         </div>
 
         <!-- COL 3: SERIE & RECUPERO -->
-        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px">
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Serie & recupero</div>
-          <svg width="80" height="80" viewBox="0 0 80 80">
+        <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:12px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:3px;overflow:hidden">
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.08em;text-align:center">Serie & recupero</div>
+          <svg width="62" height="62" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(6,182,212,.12)" stroke-width="5"/>
             <circle id="dial-nset" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="176" transform="rotate(-90 40 40)"/>
-            <text x="40" y="44" text-anchor="middle" font-size="20" font-weight="800" fill="#06b6d4" font-family="Inter,system-ui" id="disp-nset">3</text>
+            <text x="40" y="46" text-anchor="middle" font-size="22" font-weight="800" fill="#06b6d4" font-family="Inter,system-ui" id="disp-nset">3</text>
           </svg>
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Totali serie</div>
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Totali serie</div>
           <input type="range" id="jk-nset" min="1" max="10" value="3" step="1" style="width:100%;accent-color:var(--ep-cyan)" oninput="updateDial('jk-nset','dial-nset','disp-nset',207,1,10,'')">
-          <svg width="80" height="80" viewBox="0 0 80 80" style="margin-top:2px">
+          <svg width="62" height="62" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="33" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="5"/>
             <circle id="dial-trs" cx="40" cy="40" r="33" fill="none" stroke="url(#dialGrad2)" stroke-width="5" stroke-linecap="round" stroke-dasharray="207" stroke-dashoffset="124" transform="rotate(-90 40 40)"/>
-            <text x="40" y="44" text-anchor="middle" font-size="16" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-trs">60s</text>
+            <text x="40" y="46" text-anchor="middle" font-size="18" font-weight="800" fill="#a855f7" font-family="Inter,system-ui" id="disp-trs">60s</text>
           </svg>
-          <div style="font-size:8px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Recupero inter-serie</div>
+          <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.05em">Recupero inter-serie</div>
           <input type="range" id="jk-trs" min="10" max="120" value="60" step="10" style="width:100%;accent-color:#a855f7" oninput="updateDial('jk-trs','dial-trs','disp-trs',207,10,120,'s')">
         </div>
       </div>
 
-      <!-- AVVIA -->
-      <button onclick="startSession()" style="width:100%;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple));border:none;border-radius:14px;color:#000;padding:14px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;letter-spacing:.05em;box-shadow:0 0 20px rgba(6,182,212,.3);text-transform:uppercase;flex-shrink:0">Avvia allenamento</button>
+      <!-- AVVIA + PRESET ROW -->
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <button onclick="startSession()" style="flex:1;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple));border:none;border-radius:11px;color:#000;padding:9px;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;letter-spacing:.04em;text-transform:uppercase">▶ Avvia allenamento</button>
+        <button onclick="openPresetOverlay()" style="display:flex;align-items:center;gap:5px;background:rgba(168,85,247,.1);border:1.5px solid rgba(168,85,247,.35);border-radius:11px;color:#d8b4fe;padding:9px 12px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Preset
+        </button>
+      </div>
 
     </div>
 
