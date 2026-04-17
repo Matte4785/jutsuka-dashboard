@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=960, height=480, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>ASD Jutsuka — Dashboard</title>
 <style>
 /* === ELECTRIC PUNCH THEME === */
@@ -17,10 +17,10 @@
 --vh:1vh;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;user-select:none}
-html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hidden;background:var(--ep-bg);font-family:'Inter',system-ui,sans-serif;color:var(--ep-text);font-size:12px}
-.jk-app{width:960px;height:480px;max-width:960px;max-height:480px;display:flex;flex-direction:column;overflow:hidden;position:fixed;top:0;left:0;clip-path:inset(0)}
+html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hidden;background:var(--ep-bg);font-family:'Inter',system-ui,sans-serif;color:var(--ep-text);font-size:12px}
+.jk-app{width:100vw;height:100vh;max-width:100vw;max-height:100vh;display:flex;flex-direction:column;overflow:hidden;position:fixed;top:0;left:0}
 .jk-screens{display:flex;transition:transform .38s cubic-bezier(.4,0,.2,1);flex:1;min-height:0;width:100%;overflow:visible;will-change:transform}
-.jk-screen{width:960px;flex-shrink:0;padding:8px;display:flex;flex-direction:column;gap:6px;overflow:hidden;max-width:960px}
+.jk-screen{width:100vw;flex-shrink:0;padding:8px;display:flex;flex-direction:column;gap:6px;overflow:hidden;max-width:100vw}
 .jk-topbar{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:6px;flex-shrink:0}
 .jk-brand{display:flex;align-items:center;gap:8px}
 .jk-brand-mark{width:30px;height:30px;border-radius:9px;background:rgba(6,182,212,.12);border:1.5px solid var(--ep-border-a);display:grid;place-items:center;font-weight:800;color:var(--ep-cyan);font-size:12px;flex-shrink:0;box-shadow:0 0 12px rgba(6,182,212,.2)}
@@ -35,7 +35,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 .jk-card.grow{flex:1;min-height:0}
 .jk-card-live{background:var(--ep-card);border:1.5px solid var(--ep-border-a);position:relative}
 .sec-label{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ep-muted);margin-bottom:8px}
-.jk-clock{font-size:42px;font-weight:800;letter-spacing:-3px;line-height:.95;color:var(--ep-purple);text-shadow:0 0 24px rgba(168,85,247,.5),0 0 48px rgba(168,85,247,.2)}
+.jk-clock{font-size:5.5vw;font-weight:800;letter-spacing:-2px;line-height:.95;color:var(--ep-purple);text-shadow:0 0 24px rgba(168,85,247,.5),0 0 48px rgba(168,85,247,.2)}
 .jk-date{font-size:13px;color:var(--ep-cyan);margin-top:5px}
 .jk-gym-state{margin-top:6px;display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:999px;background:rgba(6,182,212,.08);color:var(--ep-glow);border:1px solid var(--ep-border);font-size:10px;width:fit-content}
 .jk-logo-area{margin-top:auto;padding-top:5px;font-size:10px;color:var(--ep-muted);line-height:1.4}
@@ -58,7 +58,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 .jk-tag.blue{background:rgba(168,85,247,.1);color:#d8b4fe;border:1px solid rgba(168,85,247,.3)}
 .jk-tag.amber{background:rgba(245,158,11,.1);color:#fcd34d;border:1px solid rgba(245,158,11,.3)}
 .jk-weather-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:7px}
-.jk-weather-temp{font-size:28px;font-weight:800;line-height:1;color:var(--ep-text)}
+.jk-weather-temp{font-size:3.5vw;font-weight:800;line-height:1;color:var(--ep-text)}
 .jk-weather-desc{font-size:10px;color:var(--ep-muted);margin-top:2px}
 .jk-weather-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:5px}
 .jk-metric{padding:7px 3px;border-radius:9px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);text-align:center}
@@ -82,7 +82,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 .jk-nav-dot{width:5px;height:5px;border-radius:50%;background:rgba(6,182,212,.2);cursor:pointer;transition:all .2s}
 .jk-nav-dot.active{width:16px;border-radius:3px;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple))}
 /* SCHERMATE INTERNE */
-.jk-inner{background:var(--ep-bg);color:var(--ep-text);display:flex;flex-direction:column;overflow:hidden;width:960px;max-width:960px}
+.jk-inner{background:var(--ep-bg);color:var(--ep-text);display:flex;flex-direction:column;overflow:hidden;width:100vw;max-width:100vw}
 .jk-inner-header{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--ep-divider);flex-shrink:0}
 .jk-back{background:rgba(6,182,212,.08);border:1.5px solid rgba(6,182,212,.3);color:var(--ep-glow);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit}
 .jk-inner-title{font-size:14px;font-weight:600;color:var(--ep-text)}
@@ -153,7 +153,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 .jk-save-row button{background:rgba(6,182,212,.08);border:1.5px solid var(--ep-border);border-radius:7px;color:var(--ep-glow);padding:6px 11px;font-size:11px;cursor:pointer;font-family:inherit}
 .jk-start-btn{width:100%;background:var(--ep-cyan);border:none;border-radius:11px;color:#000;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:auto;box-shadow:0 0 16px rgba(6,182,212,.3)}
 .jk-run-phase{font-size:10px;letter-spacing:.1em;color:var(--ep-cyan);text-align:center;text-transform:uppercase;margin-bottom:2px}
-.jk-run-timer{font-size:52px;font-weight:800;color:var(--ep-purple);text-align:center;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-3px;text-shadow:0 0 24px rgba(168,85,247,.5)}
+.jk-run-timer{font-size:7vw;font-weight:800;color:var(--ep-purple);text-align:center;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-3px;text-shadow:0 0 24px rgba(168,85,247,.5)}
 .jk-run-prog{height:10px;background:rgba(255,255,255,.07);border-radius:5px;margin:8px 0;overflow:hidden}
 .jk-run-prog-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple));box-shadow:0 0 10px var(--ep-cyan);transition:width .9s linear}
 .jk-run-meta{display:flex;justify-content:space-between;font-size:10px;color:var(--ep-muted);margin-bottom:7px}
@@ -175,12 +175,11 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </style>
 </head>
 <body>
-<div id="jk-debug-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#67e8f9;font-family:monospace;font-size:16px;padding:20px;text-align:center"><div id="jk-debug-info">Rilevamento...</div><div style="font-size:12px;color:#64748b">Tocca per chiudere e andare alla dashboard</div></div>
 <div class="jk-app">
 <div class="jk-screens" id="jk-sw">
 
 <!-- HOME -->
-<div class="jk-screen" style="width:960px;max-width:960px">
+<div class="jk-screen" style="width:100vw;max-width:100vw">
   <div class="jk-topbar">
     <div class="jk-brand">
       <div class="jk-brand-mark">J</div>
@@ -287,7 +286,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </div>
 
 <!-- PRESENZE -->
-<div class="jk-screen jk-inner" style="width:960px;max-width:960px;padding:0">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Presenze</span>
@@ -323,7 +322,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </div>
 
 <!-- CALENDARIO -->
-<div class="jk-screen jk-inner" style="width:960px;max-width:960px;padding:0">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Orari corsi</span>
@@ -334,7 +333,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </div>
 
 <!-- TABATA -->
-<div class="jk-screen jk-inner" style="width:960px;max-width:960px;padding:0">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Tabata Setup Pro</span>
@@ -461,7 +460,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </div>
 
 <!-- SPOTIFY -->
-<div class="jk-screen jk-inner" style="width:960px;max-width:960px;padding:0">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Spotify</span>
@@ -478,7 +477,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </div>
 
 <!-- AVVISI -->
-<div class="jk-screen jk-inner" style="width:960px;max-width:960px;padding:0">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Avvisi</span>
@@ -494,7 +493,7 @@ html,body{width:960px;height:480px;max-width:960px;max-height:480px;overflow:hid
 </div>
 
 <!-- ADMIN -->
-<div class="jk-screen jk-inner" style="width:960px;max-width:960px;padding:0">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
   <div class="jk-inner-header">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
     <span class="jk-inner-title">Admin</span>
@@ -609,7 +608,7 @@ let clockInterval=null, weatherInterval=null, spProgressTimer=null;
 
 function goScreen(n){
   curS=n;
-  document.getElementById('jk-sw').style.transform='translateX('+(-n*960)+'px)';
+  document.getElementById('jk-sw').style.transform='translateX('+(-n*window.innerWidth)+'px)';
   document.querySelectorAll('.jk-nav-dot').forEach((d,i)=>d.classList.toggle('active',i===n));
   document.querySelectorAll('.jk-dock-btn').forEach((b,i)=>{b.classList.remove('active');if(i===n-1&&n>0)b.classList.add('active');});
   if(n===1){renderChips();renderPres();renderBacheca();renderEventi();}
@@ -955,26 +954,7 @@ function exportPresenzePDF(){
     const np=r.nome.replace(/[⏸⚠]/g,'').trim();
     html+=`<tr><td>${r.corso}</td><td>${np}</td>${data.mesi.map(m=>`<td style="text-align:center">${r[m]||'-'}</td>`).join('')}<td class="tot" style="text-align:center">${r.totale}</td></tr>`;
   });
-  html+='</table><script>
-document.addEventListener("DOMContentLoaded",function(){
-  var el=document.getElementById("jk-debug-info");
-  var info=[
-    "window.innerWidth: "+window.innerWidth,
-    "window.innerHeight: "+window.innerHeight,
-    "screen.width: "+screen.width,
-    "screen.height: "+screen.height,
-    "devicePixelRatio: "+window.devicePixelRatio,
-    "document.body.clientWidth: "+document.body.clientWidth,
-    "document.body.clientHeight: "+document.body.clientHeight,
-    "navigator.userAgent: "+navigator.userAgent.slice(0,80)
-  ];
-  el.innerHTML=info.map(function(s){return"<div>"+s+"</div>";}).join("");
-  document.getElementById("jk-debug-overlay").addEventListener("click",function(){
-    this.style.display="none";
-  });
-});
-</script>
-</body></html>';
+  html+='</table></body></html>';
   w.document.write(html);w.document.close();
   setTimeout(()=>w.print(),400);
 }
@@ -1288,25 +1268,6 @@ function renderPresets(){} // mantenuta per compatibilità (non usata)
 
 // Inizializzazione
 renderChips();renderPres();
-</script>
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-  var el=document.getElementById("jk-debug-info");
-  var info=[
-    "window.innerWidth: "+window.innerWidth,
-    "window.innerHeight: "+window.innerHeight,
-    "screen.width: "+screen.width,
-    "screen.height: "+screen.height,
-    "devicePixelRatio: "+window.devicePixelRatio,
-    "document.body.clientWidth: "+document.body.clientWidth,
-    "document.body.clientHeight: "+document.body.clientHeight,
-    "navigator.userAgent: "+navigator.userAgent.slice(0,80)
-  ];
-  el.innerHTML=info.map(function(s){return"<div>"+s+"</div>";}).join("");
-  document.getElementById("jk-debug-overlay").addEventListener("click",function(){
-    this.style.display="none";
-  });
-});
 </script>
 </body>
 </html>
