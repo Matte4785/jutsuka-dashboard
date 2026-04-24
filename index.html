@@ -194,40 +194,16 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
         <div class="jk-clock" id="jk-clock">--:--</div>
         <div class="jk-date" id="jk-date">...</div>
         <div class="jk-gym-state"><span class="jk-dot"></span>Sala operativa</div>
-        <!-- SPOTIFY MINI PLAYER -->
-        <div style="margin-top:14px;background:rgba(6,182,212,.04);border:1px solid var(--ep-border);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px">
-          <div style="display:flex;align-items:center;gap:10px">
-            <div id="sp-art" style="width:44px;height:44px;border-radius:9px;background:linear-gradient(135deg,rgba(168,85,247,.4),rgba(6,182,212,.4));flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-            </div>
-            <div style="flex:1;min-width:0">
-              <div id="sp-title" style="font-size:12px;font-weight:600;color:var(--ep-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Apri Spotify</div>
-              <div id="sp-artist" style="font-size:10px;color:var(--ep-muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">per ascoltare la musica</div>
-            </div>
-            <div style="width:22px;height:22px;border-radius:50%;background:#1DB954;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-              <svg viewBox="0 0 24 24" fill="white" width="13" height="13"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.856zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.608z"/></svg>
-            </div>
+        <!-- SPOTIFY SHORTCUT CARD -->
+        <div onclick="goScreen(4)" style="margin-top:14px;background:rgba(29,185,84,.06);border:1px solid rgba(29,185,84,.3);border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .15s">
+          <div style="width:48px;height:48px;border-radius:12px;background:#1DB954;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(29,185,84,.35)">
+            <svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.856zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.608z"/></svg>
           </div>
-          <div style="height:2px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden">
-            <div id="sp-progress" style="height:100%;width:35%;background:linear-gradient(90deg,var(--ep-cyan),var(--ep-purple));border-radius:999px;transition:width .5s"></div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:13px;font-weight:700;color:var(--ep-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Apri Spotify</div>
+            <div style="font-size:11px;color:var(--ep-muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Musica in palestra</div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:0 2px">
-            <button onclick="spCmd('prev')" title="Precedente" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--ep-muted);display:flex;align-items:center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
-            </button>
-            <button onclick="spCmd('prev')" title="Indietro 15s" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--ep-muted);display:flex;align-items:center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.52"/><text x="8" y="15" font-size="6" fill="currentColor" stroke="none">15</text></svg>
-            </button>
-            <button id="sp-play-btn" onclick="spPlayPause()" style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--ep-cyan),var(--ep-purple));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 0 12px rgba(6,182,212,.3)">
-              <svg id="sp-play-icon" width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </button>
-            <button onclick="spCmd('next15')" title="Avanti 15s" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--ep-muted);display:flex;align-items:center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.49-3.52"/><text x="8" y="15" font-size="6" fill="currentColor" stroke="none">15</text></svg>
-            </button>
-            <button onclick="spCmd('next')" title="Successivo" style="background:none;border:none;cursor:pointer;padding:4px;color:var(--ep-muted);display:flex;align-items:center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
-            </button>
-          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(29,185,84,.7)" stroke-width="2.5" style="flex-shrink:0"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
         <div class="jk-logo-area"><strong>Venturina Fight Academy</strong><br>Ju-Jitsu · Karate · Difesa Personale</div>
       </div>
@@ -367,7 +343,7 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
     <div id="jk-tab-cfg" style="display:flex;flex-direction:column;flex:1;overflow:hidden;padding:6px 10px;gap:5px">
 
       <!-- GRIGLIA 3 COLONNE -->
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;flex:1;min-height:0">
+      <div style="display:grid;grid-template-columns:0.65fr 1.175fr 1.175fr;gap:6px;flex:1;min-height:0">
 
         <!-- COL 1: ESERCIZI PER SERIE -->
         <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:12px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:4px;overflow:hidden">
@@ -380,8 +356,8 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
           </svg>
           <div style="font-size:7px;color:var(--ep-muted);text-transform:uppercase;letter-spacing:.06em">Esercizi per serie</div>
           <div style="display:flex;gap:6px">
-            <button onclick="adjustVal('jk-nex',1,1,20,'dial-nex','disp-nex',239,20)" style="width:30px;height:30px;border-radius:7px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>
             <button onclick="adjustVal('jk-nex',-1,1,20,'dial-nex','disp-nex',239,20)" style="width:30px;height:30px;border-radius:7px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>
+            <button onclick="adjustVal('jk-nex',1,1,20,'dial-nex','disp-nex',239,20)" style="width:30px;height:30px;border-radius:7px;background:rgba(6,182,212,.1);border:1px solid var(--ep-border-a);color:var(--ep-cyan);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>
           </div>
           <input type="hidden" id="jk-nex" value="8">
         </div>
@@ -451,28 +427,85 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
         <button class="jk-rctrl go" id="jk-pbtn" onclick="togglePause()">Pausa</button>
         <button class="jk-rctrl" onclick="skipPhase()">Salta</button>
         <button class="jk-rctrl" onclick="stopSession()">Stop</button>
-        <button class="jk-rctrl" onclick="openSpotify()" style="color:#1DB954;border-color:#1DB954">♪</button>
+        <button class="jk-rctrl" onclick="goScreen(4)" style="color:#1DB954;border-color:#1DB954">♪</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- SPOTIFY -->
-<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
-  <div class="jk-inner-header">
+<div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0;background:#000">
+  <div class="jk-inner-header" style="background:linear-gradient(180deg,#0a0a0a,#000);border-bottom:1px solid rgba(29,185,84,.2)">
     <button class="jk-back" onclick="goScreen(0)">← Home</button>
-    <span class="jk-inner-title">Spotify</span>
-  </div>
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:14px;padding:20px;text-align:center">
-    <div style="width:64px;height:64px;border-radius:50%;background:#1DB954;display:grid;place-items:center">
-      <svg viewBox="0 0 24 24" fill="white" width="36" height="36"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.856zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.608z"/></svg>
+    <span class="jk-inner-title" style="display:flex;align-items:center;gap:8px">
+      <svg viewBox="0 0 24 24" fill="#1DB954" width="18" height="18" style="flex-shrink:0"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.856zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.608z"/></svg>
+      Spotify
+    </span>
+    <div id="sp-user-strip" style="margin-left:auto;display:none;align-items:center;gap:8px;padding-right:4px">
+      <img id="sp-user-avatar" src="" alt="" style="width:24px;height:24px;border-radius:50%;background:#333;object-fit:cover">
+      <span id="sp-user-name" style="font-size:11px;color:#ddd;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
+      <button onclick="spotifyLogout()" title="Esci" style="background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:6px;color:#aaa;padding:3px 8px;font-size:10px;cursor:pointer;font-family:inherit">Esci</button>
     </div>
-    <div style="font-size:18px;font-weight:600;color:var(--ep-text)">Spotify</div>
-    <div style="font-size:12px;color:var(--ep-muted)">La musica continua durante il timer</div>
-    <button onclick="openSpotify()" style="background:#1DB954;border:none;border-radius:40px;color:#000;padding:13px 30px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;width:100%;max-width:220px">Apri Spotify</button>
-    <button onclick="window.open('https://open.spotify.com','_blank')" style="background:rgba(6,182,212,.08);border:1.5px solid rgba(6,182,212,.3);border-radius:40px;color:var(--ep-soft);padding:11px 30px;font-size:13px;cursor:pointer;font-family:inherit;width:100%;max-width:220px">Apri nel browser</button>
+  </div>
+
+  <!-- SCHERMATA LOGIN (pre-auth) -->
+  <div id="sp-login-screen" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:24px;text-align:center;background:radial-gradient(ellipse at center,#0a2e1a 0%,#000 70%)">
+    <div style="width:96px;height:96px;border-radius:50%;background:#1DB954;display:grid;place-items:center;box-shadow:0 0 40px rgba(29,185,84,.45),0 0 80px rgba(29,185,84,.2)">
+      <svg viewBox="0 0 24 24" fill="#000" width="58" height="58"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.208c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 01.207.856zm1.223-2.722a.78.78 0 01-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 01-.973-.519.781.781 0 01.52-.974c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 01.257 1.073zm.105-2.835c-3.223-1.914-8.54-2.09-11.618-1.156a.935.935 0 11-.543-1.79c3.532-1.072 9.404-.865 13.115 1.338a.935.935 0 01-.954 1.608z"/></svg>
+    </div>
+    <div style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-.5px">Jutsuka Music</div>
+    <div style="font-size:12px;color:#9ca3af;max-width:320px;line-height:1.55">Accedi con il tuo account Spotify Premium per vedere le tue playlist e ascoltarle direttamente qui nella dashboard.</div>
+    <button id="sp-login-btn" onclick="spotifyLogin()" style="background:#1DB954;border:none;border-radius:999px;color:#000;padding:14px 36px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;letter-spacing:.5px;box-shadow:0 4px 20px rgba(29,185,84,.4);transition:transform .15s">Accedi con Spotify</button>
+    <div id="sp-login-error" style="display:none;font-size:11px;color:#ff9090;max-width:320px;line-height:1.5;margin-top:4px"></div>
+  </div>
+
+  <!-- SCHERMATA PRINCIPALE (post-auth) -->
+  <div id="sp-main-screen" style="flex:1;display:none;flex-direction:column;overflow:hidden">
+    <!-- Barra di ricerca -->
+    <div style="padding:8px 12px;border-bottom:1px solid rgba(29,185,84,.15);flex-shrink:0;display:flex;gap:6px;align-items:center;background:#0a0a0a">
+      <div style="flex:1;position:relative;display:flex;align-items:center">
+        <svg viewBox="0 0 24 24" fill="#888" width="14" height="14" style="position:absolute;left:10px;pointer-events:none"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="sp-search-input" placeholder="Cerca brani, artisti, playlist..."
+               onkeydown="if(event.key==='Enter')spotifySearch()"
+               style="flex:1;width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:999px;color:#fff;padding:8px 14px 8px 32px;font-size:12px;font-family:inherit;outline:none">
+      </div>
+      <button id="sp-search-clear" onclick="spotifyClearSearch()" style="display:none;background:transparent;border:none;color:#888;padding:6px;font-size:16px;cursor:pointer;font-family:inherit">✕</button>
+    </div>
+
+    <!-- Area contenuto scrollabile -->
+    <div id="sp-content" style="flex:1;overflow-y:auto;overflow-x:hidden;padding:12px;background:linear-gradient(180deg,#000 0%,#0a0a0a 100%)">
+      <!-- Inizialmente vuoto, viene popolato dinamicamente -->
+      <div id="sp-loading" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;gap:12px">
+        <div style="width:32px;height:32px;border:3px solid rgba(29,185,84,.2);border-top-color:#1DB954;border-radius:50%;animation:spSpin 1s linear infinite"></div>
+        <div style="font-size:11px;color:#888">Caricamento...</div>
+      </div>
+    </div>
+
+    <!-- Player embed in basso (si mostra quando si seleziona qualcosa) -->
+    <div id="sp-player-bar" style="display:none;flex-shrink:0;border-top:1px solid rgba(29,185,84,.2);background:#000;height:80px;overflow:hidden">
+      <iframe id="sp-player-iframe" src="" style="width:100%;height:100%;border:none"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+    </div>
   </div>
 </div>
+
+<style>
+@keyframes spSpin { to { transform: rotate(360deg); } }
+.sp-section-title { font-size:11px;font-weight:700;color:#1DB954;text-transform:uppercase;letter-spacing:1px;margin:6px 4px 10px 4px }
+.sp-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:18px }
+.sp-card { background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:8px;cursor:pointer;transition:all .15s;overflow:hidden }
+.sp-card:hover,.sp-card:active { background:rgba(29,185,84,.1);border-color:rgba(29,185,84,.4);transform:translateY(-1px) }
+.sp-card-img { width:100%;aspect-ratio:1;border-radius:6px;background:#222;object-fit:cover;margin-bottom:6px;display:block }
+.sp-card-title { font-size:12px;font-weight:600;color:#fff;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis }
+.sp-card-sub { font-size:10px;color:#888;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap }
+.sp-list-row { display:flex;align-items:center;gap:10px;padding:6px 4px;border-radius:8px;cursor:pointer;transition:background .15s;margin-bottom:2px }
+.sp-list-row:hover,.sp-list-row:active { background:rgba(29,185,84,.1) }
+.sp-list-img { width:44px;height:44px;border-radius:4px;background:#222;object-fit:cover;flex-shrink:0 }
+.sp-list-info { flex:1;min-width:0 }
+.sp-list-title { font-size:12px;color:#fff;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap }
+.sp-list-sub { font-size:10px;color:#888;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px }
+</style>
 
 <!-- AVVISI -->
 <div class="jk-screen jk-inner" style="width:100vw;max-width:100vw;padding:0">
@@ -521,7 +554,6 @@ html,body{width:100vw;height:100vh;max-width:100vw;max-height:100vh;overflow:hid
         <span style="font-size:16px">🔊</span>
         <span id="beep-vol-val" style="font-size:12px;color:var(--ep-cyan);min-width:36px;text-align:right">50%</span>
       </div>
-    </div>
     </div>
     <div style="background:var(--ep-card);border:1px solid var(--ep-border);border-radius:12px;padding:12px">
       <div style="font-size:11px;font-weight:700;color:var(--ep-glow);margin-bottom:8px">Spotify durante Tabata</div>
@@ -615,7 +647,7 @@ let presenze=JSON.parse(localStorage.getItem('jk_pres')||'{}');
 let presets=JSON.parse(localStorage.getItem('jk_presets')||'[]');
 let corsoAttivo=getAutoCorso()||'jj-junior';
 
-let clockInterval=null, weatherInterval=null, spProgressTimer=null;
+let clockInterval=null, weatherInterval=null;
 
 function goScreen(n){
   curS=n;
@@ -673,7 +705,7 @@ function renderChips(){
     return `<button class="${classes}" onclick="selectCorso('${k}')">${NOMI[k]||k}</button>`;
   }).join('');
 }
-function selectCorso(k){corsoAttivo=k;renderChips();renderPres();}
+function selectCorso(k){corsoAttivo=k;savePrefs({corsoAttivo:k});renderChips();renderPres();}
 
 function renderPres(){
   const todayISO=new Date().toISOString().slice(0,10);
@@ -754,56 +786,16 @@ function renderOrariCal(){
   document.getElementById('jk-orari-cal').innerHTML=prossimiHtml+fissi.map(d=>`<div style="margin-bottom:14px"><div class="jk-divider"><span>${d.label}</span></div>${d.corsi.map(c=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;background:var(--ep-card);border:1px solid var(--ep-border);margin-bottom:5px"><div style="width:3px;height:36px;border-radius:2px;background:${c.col==='teal'?'var(--ep-cyan)':'#f59e0b'};flex-shrink:0"></div><div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--ep-text)">${c.nome}</div><div style="font-size:11px;color:var(--ep-muted);margin-top:2px">${c.ist}</div></div><div class="jk-tag ${c.col}">${c.orario}</div></div>`).join('')}</div>`).join('');
 }
 
-function openSpotify(){
-  const intent='intent://open#Intent;package=com.spotify.music;scheme=spotify;end';
-  window.location.href=intent;
-  setTimeout(()=>{ window.location.href='https://open.spotify.com'; },2000);
-}
-
-let spPlaying=false;
-function spPlayPause(){
-  spPlaying=!spPlaying;
-  const icon=document.getElementById('sp-play-icon');
-  if(spPlaying){
-    icon.innerHTML='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
-    icon.setAttribute('fill','white');
-    animateProgress();
-    document.getElementById('sp-title').textContent='In riproduzione';
-    document.getElementById('sp-artist').textContent='Controlla su Spotify';
-  }else{
-    icon.innerHTML='<polygon points="5 3 19 12 5 21 5 3"/>';
-    if(spProgressTimer){clearInterval(spProgressTimer);spProgressTimer=null;}
-  }
-  window.location.href='intent://play#Intent;package=com.spotify.music;scheme=spotify;end';
-}
-function spCmd(cmd){
-  const urls={
-    'prev':'intent://previous#Intent;package=com.spotify.music;scheme=spotify;end',
-    'next':'intent://skip#Intent;package=com.spotify.music;scheme=spotify;end',
-    'prev15':'intent://previous#Intent;package=com.spotify.music;scheme=spotify;end',
-    'next15':'intent://skip#Intent;package=com.spotify.music;scheme=spotify;end'
-  };
-  if(urls[cmd])window.location.href=urls[cmd];
-  else openSpotify();
-}
-let spProg=35;
-function animateProgress(){
-  if(spProgressTimer)clearInterval(spProgressTimer);
-  spProgressTimer=setInterval(()=>{
-    spProg=(spProg+.05)%100;
-    const el=document.getElementById('sp-progress');
-    if(el)el.style.width=spProg+'%';
-  },500);
-}
-
 const AudioCtx=window.AudioContext||window.webkitAudioContext;let actx=null,audioEnabled=true,beepVolume=0.5;
 function getACtx(){if(!actx){actx=new AudioCtx();if(actx.state==='suspended')actx.resume();}return actx;}
 function updateBeepVol(v){
   beepVolume=v/100;
   document.getElementById('beep-vol-val').textContent=v+'%';
+  savePrefs({beepVolume:v});
 }
 function toggleAudio(){
   audioEnabled=!audioEnabled;
+  savePrefs({audioEnabled:audioEnabled});
   const btn=document.getElementById('audio-btn');
   if(audioEnabled){
     try{const ctx=getACtx();if(ctx.state==='suspended')ctx.resume();beepRaw(880,.15,.3);}catch(e){}
@@ -1028,6 +1020,7 @@ function updateDial(inputId,dialId,dispId,circumf,min,max,unit){
   if(dial)dial.style.strokeDashoffset=offset;
   const disp=document.getElementById(dispId);
   if(disp)disp.textContent=formatTimeLabel(val,unit);
+  savePrefs({[inputId]:val});
 }
 function adjustVal(inputId,delta,min,max,dialId,dispId,circumf,maxRange){
   const el=document.getElementById(inputId);
@@ -1039,6 +1032,7 @@ function adjustVal(inputId,delta,min,max,dialId,dispId,circumf,maxRange){
   if(dial)dial.style.strokeDashoffset=offset;
   const disp=document.getElementById(dispId);
   if(disp)disp.textContent=v;
+  savePrefs({[inputId]:v});
 }
 function savePreset(){
   const name=document.getElementById('jk-pname').value.trim()||'Sessione '+(presets.length+1);
@@ -1068,6 +1062,7 @@ function loadPreset(i){
   updateDial('jk-trs','dial-trs','disp-trs',207,10,120,'s');
   updateDial('jk-nset','dial-nset','disp-nset',207,1,10,'');
   adjustVal('jk-nex',0,1,20,'dial-nex','disp-nex',239,20);
+  savePrefs({'jk-nex':nex,'jk-tex':p.tex,'jk-tre':p.tre||0,'jk-trs':p.trs,'jk-nset':p.nset});
 }
 
 // ========== TABATA TIMER LOGIC (MODIFICATO) ==========
@@ -1281,8 +1276,445 @@ function renderPresets(){} // mantenuta per compatibilità (non usata)
   },{passive:true});
 })();
 
+// ========== PERSISTENZA PREFERENZE (localStorage) ==========
+function savePrefs(obj){
+  try{
+    const cur=JSON.parse(localStorage.getItem('jk_prefs')||'{}');
+    Object.assign(cur,obj);
+    localStorage.setItem('jk_prefs',JSON.stringify(cur));
+  }catch(e){}
+}
+function loadPrefs(){
+  try{return JSON.parse(localStorage.getItem('jk_prefs')||'{}');}catch(e){return {};}
+}
+
+// ========== SPOTIFY: OAuth PKCE + Web API ==========
+const SPOTIFY_CLIENT_ID='af4489cb8b514a9b8c6f4faf19fed910';
+const SPOTIFY_REDIRECT_URI='https://matte4785.github.io/jutsuka-dashboard/';
+const SPOTIFY_SCOPES=[
+  'user-read-private','user-read-email',
+  'playlist-read-private','playlist-read-collaborative',
+  'user-library-read','user-read-recently-played','user-top-read',
+  'streaming','user-modify-playback-state','user-read-playback-state','user-read-currently-playing'
+].join(' ');
+
+// --- Helpers PKCE ---
+function spRandomString(len){
+  const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
+  const arr=new Uint8Array(len);
+  crypto.getRandomValues(arr);
+  return Array.from(arr,b=>chars[b%chars.length]).join('');
+}
+async function spSha256(input){
+  const data=new TextEncoder().encode(input);
+  const hash=await crypto.subtle.digest('SHA-256',data);
+  return hash;
+}
+function spBase64UrlEncode(buf){
+  let s=btoa(String.fromCharCode(...new Uint8Array(buf)));
+  return s.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+
+// --- Token storage ---
+function spGetToken(){
+  try{
+    const t=JSON.parse(localStorage.getItem('sp_token')||'null');
+    if(!t) return null;
+    if(t.expires_at && Date.now()>=t.expires_at-30000) return null; // scaduto (margine 30s)
+    return t;
+  }catch(e){return null;}
+}
+function spSaveToken(t){
+  t.expires_at=Date.now()+(t.expires_in||3600)*1000;
+  localStorage.setItem('sp_token',JSON.stringify(t));
+}
+function spGetRefreshToken(){
+  try{return (JSON.parse(localStorage.getItem('sp_token')||'null')||{}).refresh_token||null;}catch(e){return null;}
+}
+function spClearToken(){localStorage.removeItem('sp_token');localStorage.removeItem('sp_user');}
+
+// --- Login ---
+async function spotifyLogin(){
+  try{
+    const verifier=spRandomString(64);
+    const challenge=spBase64UrlEncode(await spSha256(verifier));
+    const state=spRandomString(16);
+    sessionStorage.setItem('sp_pkce_verifier',verifier);
+    sessionStorage.setItem('sp_pkce_state',state);
+    const params=new URLSearchParams({
+      client_id:SPOTIFY_CLIENT_ID,
+      response_type:'code',
+      redirect_uri:SPOTIFY_REDIRECT_URI,
+      code_challenge_method:'S256',
+      code_challenge:challenge,
+      scope:SPOTIFY_SCOPES,
+      state:state,
+      show_dialog:'false'
+    });
+    window.location.href='https://accounts.spotify.com/authorize?'+params.toString();
+  }catch(e){
+    const err=document.getElementById('sp-login-error');
+    if(err){err.style.display='block';err.textContent='Errore avvio login: '+e.message;}
+  }
+}
+function spotifyLogout(){
+  spClearToken();
+  const u=document.getElementById('sp-user-strip');if(u)u.style.display='none';
+  const l=document.getElementById('sp-login-screen');if(l)l.style.display='flex';
+  const m=document.getElementById('sp-main-screen');if(m)m.style.display='none';
+  const pb=document.getElementById('sp-player-bar');if(pb)pb.style.display='none';
+  const pi=document.getElementById('sp-player-iframe');if(pi)pi.src='';
+}
+
+// --- Callback handler ---
+async function spHandleCallback(){
+  const params=new URLSearchParams(window.location.search);
+  const code=params.get('code');
+  const state=params.get('state');
+  const error=params.get('error');
+  if(error){
+    // Pulisci URL e mostra errore
+    history.replaceState({},document.title,window.location.pathname);
+    const err=document.getElementById('sp-login-error');
+    if(err){err.style.display='block';err.textContent='Login annullato o negato: '+error;}
+    goScreen(4);
+    return;
+  }
+  if(!code) return;
+  const savedState=sessionStorage.getItem('sp_pkce_state');
+  const verifier=sessionStorage.getItem('sp_pkce_verifier');
+  if(!verifier || state!==savedState){
+    history.replaceState({},document.title,window.location.pathname);
+    return;
+  }
+  try{
+    const body=new URLSearchParams({
+      client_id:SPOTIFY_CLIENT_ID,
+      grant_type:'authorization_code',
+      code:code,
+      redirect_uri:SPOTIFY_REDIRECT_URI,
+      code_verifier:verifier
+    });
+    const res=await fetch('https://accounts.spotify.com/api/token',{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:body.toString()
+    });
+    if(!res.ok) throw new Error('Token exchange failed: '+res.status);
+    const tok=await res.json();
+    spSaveToken(tok);
+    sessionStorage.removeItem('sp_pkce_verifier');
+    sessionStorage.removeItem('sp_pkce_state');
+    history.replaceState({},document.title,window.location.pathname);
+    goScreen(4);
+    spShowLoggedUI();
+  }catch(e){
+    history.replaceState({},document.title,window.location.pathname);
+    const err=document.getElementById('sp-login-error');
+    if(err){err.style.display='block';err.textContent='Errore scambio token: '+e.message;}
+    goScreen(4);
+  }
+}
+
+// --- Token refresh ---
+async function spRefreshToken(){
+  const rt=spGetRefreshToken();
+  if(!rt) return null;
+  try{
+    const body=new URLSearchParams({
+      client_id:SPOTIFY_CLIENT_ID,
+      grant_type:'refresh_token',
+      refresh_token:rt
+    });
+    const res=await fetch('https://accounts.spotify.com/api/token',{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:body.toString()
+    });
+    if(!res.ok) return null;
+    const tok=await res.json();
+    if(!tok.refresh_token) tok.refresh_token=rt; // Spotify a volte non lo rimanda
+    spSaveToken(tok);
+    return tok;
+  }catch(e){return null;}
+}
+
+// --- API call helper ---
+async function spApi(path){
+  let tok=spGetToken();
+  if(!tok){tok=await spRefreshToken();}
+  if(!tok){spotifyLogout();return null;}
+  try{
+    const res=await fetch('https://api.spotify.com/v1'+path,{
+      headers:{'Authorization':'Bearer '+tok.access_token}
+    });
+    if(res.status===401){
+      tok=await spRefreshToken();
+      if(!tok){spotifyLogout();return null;}
+      const r2=await fetch('https://api.spotify.com/v1'+path,{headers:{'Authorization':'Bearer '+tok.access_token}});
+      if(!r2.ok) return null;
+      return await r2.json();
+    }
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){return null;}
+}
+
+// --- UI post-login ---
+async function spShowLoggedUI(){
+  const login=document.getElementById('sp-login-screen');
+  const main=document.getElementById('sp-main-screen');
+  const strip=document.getElementById('sp-user-strip');
+  if(!login||!main) return;
+  login.style.display='none';
+  main.style.display='flex';
+
+  // Profilo
+  let user=null;
+  try{user=JSON.parse(localStorage.getItem('sp_user')||'null');}catch(e){}
+  if(!user){
+    user=await spApi('/me');
+    if(user) localStorage.setItem('sp_user',JSON.stringify({id:user.id,display_name:user.display_name,images:user.images}));
+  }
+  if(user){
+    const nm=document.getElementById('sp-user-name');
+    const av=document.getElementById('sp-user-avatar');
+    if(nm) nm.textContent=user.display_name||'Utente';
+    if(av && user.images && user.images.length) av.src=user.images[0].url;
+    if(strip) strip.style.display='flex';
+  }
+  spLoadHome();
+}
+
+async function spLoadHome(){
+  const content=document.getElementById('sp-content');
+  if(!content) return;
+  content.innerHTML=`<div id="sp-loading" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;gap:12px">
+    <div style="width:32px;height:32px;border:3px solid rgba(29,185,84,.2);border-top-color:#1DB954;border-radius:50%;animation:spSpin 1s linear infinite"></div>
+    <div style="font-size:11px;color:#888">Caricamento libreria...</div>
+  </div>`;
+  const [playlists,recent]=await Promise.all([
+    spApi('/me/playlists?limit=30'),
+    spApi('/me/player/recently-played?limit=12')
+  ]);
+  let html='';
+  // Recenti (in cima se presenti)
+  if(recent && recent.items && recent.items.length){
+    const seen=new Set();
+    const items=recent.items.filter(it=>{
+      const k=it.track.id;if(seen.has(k))return false;seen.add(k);return true;
+    }).slice(0,6);
+    html+='<div class="sp-section-title">Riprodotti di recente</div>';
+    html+='<div class="sp-grid">';
+    items.forEach(it=>{
+      const t=it.track;
+      const img=(t.album&&t.album.images&&t.album.images[0])?t.album.images[0].url:'';
+      const artists=t.artists.map(a=>a.name).join(', ');
+      html+=`<div class="sp-card" onclick="spPlay('track','${t.id}',${JSON.stringify(t.name).replace(/"/g,'&quot;')})">
+        <img class="sp-card-img" src="${img}" alt="" loading="lazy">
+        <div class="sp-card-title">${spEsc(t.name)}</div>
+        <div class="sp-card-sub">${spEsc(artists)}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  // Playlist
+  if(playlists && playlists.items && playlists.items.length){
+    html+='<div class="sp-section-title">Le tue playlist</div>';
+    html+='<div class="sp-grid">';
+    playlists.items.forEach(p=>{
+      const img=(p.images&&p.images[0])?p.images[0].url:'';
+      const owner=p.owner?p.owner.display_name:'';
+      const tot=p.tracks?p.tracks.total:0;
+      html+=`<div class="sp-card" onclick="spPlay('playlist','${p.id}',${JSON.stringify(p.name).replace(/"/g,'&quot;')})">
+        <img class="sp-card-img" src="${img}" alt="" loading="lazy">
+        <div class="sp-card-title">${spEsc(p.name)}</div>
+        <div class="sp-card-sub">${tot} brani · ${spEsc(owner)}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  if(!html){
+    html='<div style="padding:40px 20px;text-align:center;color:#888;font-size:12px;line-height:1.6">Nessuna playlist trovata.<br>Usa la ricerca qui sopra per trovare brani, artisti o playlist.</div>';
+  }
+  content.innerHTML=html;
+  // Ripristina ultima riproduzione
+  const last=loadPrefs().spLastPlay;
+  if(last && last.type && last.id){
+    spLoadPlayer(last.type,last.id);
+  }
+}
+
+async function spotifySearch(){
+  const input=document.getElementById('sp-search-input');
+  const clearBtn=document.getElementById('sp-search-clear');
+  const content=document.getElementById('sp-content');
+  if(!input||!content) return;
+  const q=input.value.trim();
+  if(!q){spotifyClearSearch();return;}
+  if(clearBtn) clearBtn.style.display='inline-block';
+  content.innerHTML=`<div style="display:flex;justify-content:center;padding:30px"><div style="width:28px;height:28px;border:3px solid rgba(29,185,84,.2);border-top-color:#1DB954;border-radius:50%;animation:spSpin 1s linear infinite"></div></div>`;
+  const r=await spApi('/search?type=track,playlist,artist,album&limit=6&q='+encodeURIComponent(q));
+  if(!r){content.innerHTML='<div style="padding:30px;text-align:center;color:#888;font-size:12px">Errore ricerca</div>';return;}
+  let html='';
+  if(r.tracks && r.tracks.items && r.tracks.items.length){
+    html+='<div class="sp-section-title">Brani</div>';
+    r.tracks.items.forEach(t=>{
+      const img=(t.album&&t.album.images&&t.album.images[2])?t.album.images[2].url:((t.album&&t.album.images&&t.album.images[0])?t.album.images[0].url:'');
+      const artists=t.artists.map(a=>a.name).join(', ');
+      html+=`<div class="sp-list-row" onclick="spPlay('track','${t.id}',${JSON.stringify(t.name).replace(/"/g,'&quot;')})">
+        <img class="sp-list-img" src="${img}" alt="" loading="lazy">
+        <div class="sp-list-info"><div class="sp-list-title">${spEsc(t.name)}</div><div class="sp-list-sub">${spEsc(artists)}</div></div>
+      </div>`;
+    });
+  }
+  if(r.playlists && r.playlists.items && r.playlists.items.length){
+    html+='<div class="sp-section-title" style="margin-top:16px">Playlist</div><div class="sp-grid">';
+    r.playlists.items.filter(x=>x).forEach(p=>{
+      const img=(p.images&&p.images[0])?p.images[0].url:'';
+      html+=`<div class="sp-card" onclick="spPlay('playlist','${p.id}',${JSON.stringify(p.name).replace(/"/g,'&quot;')})">
+        <img class="sp-card-img" src="${img}" alt="" loading="lazy">
+        <div class="sp-card-title">${spEsc(p.name)}</div>
+        <div class="sp-card-sub">${spEsc((p.owner&&p.owner.display_name)||'')}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  if(r.albums && r.albums.items && r.albums.items.length){
+    html+='<div class="sp-section-title" style="margin-top:16px">Album</div><div class="sp-grid">';
+    r.albums.items.forEach(a=>{
+      const img=(a.images&&a.images[0])?a.images[0].url:'';
+      const artists=a.artists.map(x=>x.name).join(', ');
+      html+=`<div class="sp-card" onclick="spPlay('album','${a.id}',${JSON.stringify(a.name).replace(/"/g,'&quot;')})">
+        <img class="sp-card-img" src="${img}" alt="" loading="lazy">
+        <div class="sp-card-title">${spEsc(a.name)}</div>
+        <div class="sp-card-sub">${spEsc(artists)}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  if(r.artists && r.artists.items && r.artists.items.length){
+    html+='<div class="sp-section-title" style="margin-top:16px">Artisti</div><div class="sp-grid">';
+    r.artists.items.forEach(a=>{
+      const img=(a.images&&a.images[0])?a.images[0].url:'';
+      html+=`<div class="sp-card" onclick="spPlay('artist','${a.id}',${JSON.stringify(a.name).replace(/"/g,'&quot;')})">
+        <img class="sp-card-img" src="${img}" alt="" loading="lazy" style="border-radius:50%">
+        <div class="sp-card-title" style="text-align:center">${spEsc(a.name)}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  if(!html) html='<div style="padding:30px;text-align:center;color:#888;font-size:12px">Nessun risultato</div>';
+  content.innerHTML=html;
+}
+function spotifyClearSearch(){
+  const input=document.getElementById('sp-search-input');
+  const clearBtn=document.getElementById('sp-search-clear');
+  if(input) input.value='';
+  if(clearBtn) clearBtn.style.display='none';
+  spLoadHome();
+}
+function spLoadPlayer(type,id){
+  const bar=document.getElementById('sp-player-bar');
+  const iframe=document.getElementById('sp-player-iframe');
+  if(!bar||!iframe) return;
+  iframe.src=`https://open.spotify.com/embed/${type}/${id}?utm_source=generator&theme=0`;
+  bar.style.display='block';
+}
+function spPlay(type,id,name){
+  spLoadPlayer(type,id);
+  savePrefs({spLastPlay:{type,id,name:name||''}});
+}
+function spEsc(s){
+  if(s==null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ========== RIPRISTINO PREFERENZE AL CARICAMENTO ==========
+function restorePrefs(){
+  const p=loadPrefs();
+  // Corso attivo
+  if(p.corsoAttivo && typeof iscritti!=='undefined' && iscritti[p.corsoAttivo]) corsoAttivo=p.corsoAttivo;
+  // Audio
+  if(typeof p.audioEnabled==='boolean'){
+    audioEnabled=p.audioEnabled;
+    const btn=document.getElementById('audio-btn');
+    if(btn){
+      if(audioEnabled){
+        btn.textContent='🔊 Beep attivo — tocca per disattivare';
+        btn.style.background='rgba(22,210,179,.12)';
+        btn.style.borderColor='#16d2b3';
+        btn.style.color='#bdf8ee';
+      } else {
+        btn.textContent='🔇 Beep disattivato — tocca per riattivare';
+        btn.style.background='rgba(100,116,139,.08)';
+        btn.style.borderColor='rgba(100,116,139,.3)';
+        btn.style.color='var(--ep-muted)';
+      }
+    }
+  }
+  // Volume beep
+  if(typeof p.beepVolume==='number'){
+    beepVolume=p.beepVolume/100;
+    const sl=document.getElementById('beep-vol');
+    const lbl=document.getElementById('beep-vol-val');
+    if(sl) sl.value=p.beepVolume;
+    if(lbl) lbl.textContent=p.beepVolume+'%';
+  }
+  // Valori dial tabata
+  const dialMap=[
+    ['jk-tex','dial-tex','disp-tex',207,5,600,'s'],
+    ['jk-tre','dial-tre','disp-tre',207,0,60,'s'],
+    ['jk-trs','dial-trs','disp-trs',207,10,120,'s'],
+    ['jk-nset','dial-nset','disp-nset',207,1,10,'']
+  ];
+  dialMap.forEach(([id,dial,disp,c,mn,mx,u])=>{
+    if(typeof p[id]!=='undefined'){
+      const el=document.getElementById(id);
+      if(el){el.value=p[id];updateDialSilent(id,dial,disp,c,mn,mx,u);}
+    }
+  });
+  if(typeof p['jk-nex']!=='undefined'){
+    const el=document.getElementById('jk-nex');
+    if(el){el.value=p['jk-nex'];adjustValSilent('jk-nex',0,1,20,'dial-nex','disp-nex',239,20);}
+  }
+}
+// Varianti "silent" per evitare di risalvare durante il ripristino
+function updateDialSilent(inputId,dialId,dispId,circumf,min,max,unit){
+  const val=+document.getElementById(inputId).value;
+  const pct=(val-min)/(max-min);
+  const offset=circumf-(pct*circumf*0.85);
+  const dial=document.getElementById(dialId);
+  if(dial)dial.style.strokeDashoffset=offset;
+  const disp=document.getElementById(dispId);
+  if(disp)disp.textContent=formatTimeLabel(val,unit);
+}
+function adjustValSilent(inputId,delta,min,max,dialId,dispId,circumf,maxRange){
+  const el=document.getElementById(inputId);
+  let v=Math.min(max,Math.max(min,(+el.value||min)+delta));
+  el.value=v;
+  const pct=(v-min)/(maxRange||max-min);
+  const offset=circumf-(pct*circumf*0.75);
+  const dial=document.getElementById(dialId);
+  if(dial)dial.style.strokeDashoffset=offset;
+  const disp=document.getElementById(dispId);
+  if(disp)disp.textContent=v;
+}
+
 // Inizializzazione
-renderChips();renderPres();
+restorePrefs();renderChips();renderPres();
+// Gestione Spotify: se c'è un token valido o stiamo tornando dal callback
+(async function spInit(){
+  // Gestisci callback OAuth se presente nell'URL
+  if(new URLSearchParams(window.location.search).get('code') || new URLSearchParams(window.location.search).get('error')){
+    await spHandleCallback();
+    return;
+  }
+  // Se c'è già un token valido, mostra la UI loggata
+  if(spGetToken() || spGetRefreshToken()){
+    spShowLoggedUI();
+  }
+})();
 </script>
 </body>
 </html>
